@@ -1,9 +1,9 @@
 # Free Image to Prompt Generator Online
 ## Transform your images into detailed AI prompts with our advanced image analysis tool 
 
-Deno: [img2prompt](https://img2prompt.pages.dev/)
-Features
+Demo: [img2prompt](https://img2prompt.pages.dev/)
 
+Features:
 AI-Powered Analysis
 Advanced AI analyzes every detail of your image to create comprehensive prompts
 Lightning Fast
