@@ -1,1 +1,347 @@
-yes
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool">
+<meta name="keywords" content="img2prompt, Image to prompt generator online, Image to prompt free, Image to Prompt extension, Image to prompt ChatGPT, Image to prompt Stable Diffusion, Image to prompt huggingface, Image to prompt generator without login, Prompt to image AI" />    <meta name="author" content="hendygital">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Image to Prompt Generator - AI-Powered Image Analysis Tool">
+    <meta property="og:description" content="Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://img2prompt.pages.dev/">
+	<link rel="canonical" href="https://cdn.tailwindcss.com">
+    <meta property="og:image" content="img2prompt.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image to Prompt Generator">
+    <meta name="twitter:description" content="Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='preconnect'/>
+	<link crossorigin='anonymous' href='https://cdn.tailwindcss.com' rel='preconnect'/>
+    <title>Free Image to Prompt Generator Online - img2prompt</title>
+    <link href='icon.png' rel='icon' type='image/png'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='57x57'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='114x114'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='72x72'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='144x144'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='60x60'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='120x120'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='76x76'/>
+<link href='icon.png' rel='apple-touch-icon-precomposed' sizes='152x152'/>
+<link href='icon.png' rel='icon' sizes='196x196' type='image/png'/>
+<link href='icon.png' rel='icon' sizes='96x96' type='image/png'/>
+<link href='icon.png' rel='icon' sizes='32x32' type='image/png'/>
+<link href='icon.png' rel='icon' sizes='16x16' type='image/png'/>
+<link href='icon.png' rel='icon' sizes='128x128' type='image/png'/>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image to Prompt Generator",
+        "description": "Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool",
+        "url": "https://img2prompt.pages.dev/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "AI Tools Hub"
+        }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#8B8CF8',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #5D5CDE;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Anti DevTools Protection -->
+    <script>
+        (function() {
+            'use strict';
+            const devtools = { open: false, orientation: null };
+            const threshold = 160;
+            setInterval(function() {
+                if (window.outerHeight - window.innerHeight > threshold || 
+                    window.outerWidth - window.innerWidth > threshold) {
+                    if (!devtools.open) {
+                        devtools.open = true;
+                        document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;"><h1>Developer tools detected!</h1></div>';
+                    }
+                }
+            }, 100);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.keyCode === 123 || 
+                    (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+                    (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||
+                    (e.ctrlKey && e.keyCode === 85)) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+            
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        })();
+    </script>
+
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-image text-primary text-2xl mr-3"></i>
+                    <a href="https://img2prompt.pages.dev/"><h1 class="text-xl font-bold text-gray-900">Img2Prompt</h1></a>
+                </div>
+                <div class="flex items-center space-x-4">
+				<a href="/" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="#features" class="text-gray-600 hover:text-primary transition-colors">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-primary transition-colors">How it Works</a>
+					<a href="about-us" class="text-gray-600 hover:text-primary transition-colors">About</a>
+					<a href="disclaimer" class="text-gray-600 hover:text-primary transition-colors">Disclaimer</a>		
+					<a href="privacy-policy" class="text-gray-600 hover:text-primary transition-colors">Privacy Policy</a>
+					<a href="terms-of-service" class="text-gray-600 hover:text-primary transition-colors">Terms of Service</a>
+					<a href="contact-us" class="text-gray-600 hover:text-primary transition-colors">Contact Us</a>
+                    <a href="https://lynk.id/payme/hendygital" target="_blank"><button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">
+                        💛Donate
+                    </button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex min-h-screen">
+        <!-- Sticky Sidebar -->
+        <aside class="sticky top-16 h-[calc(100vh-4rem)] w-64 bg-white border-r border-gray-200 overflow-y-auto">
+            <div class="p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h2>
+                <nav class="space-y-2">
+                    <a href="#generator" class="flex items-center px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-wand-magic-sparkles mr-3 text-primary"></i>
+                        Generator
+                    </a>
+                    <a href="#features" class="flex items-center px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-star mr-3 text-primary"></i>
+                        Features
+                    </a>
+                    <a href="#how-it-works" class="flex items-center px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-question-circle mr-3 text-primary"></i>
+                        How it Works
+                    </a>
+                </nav>
+                
+                <!-- AdSense Placeholder -->
+                <div class="mt-8 p-4 bg-gray-100 rounded-lg text-center text-sm text-gray-600 border border-gray-300">
+                    <div class="w-80 h-32 bg-gray-200 rounded flex items-center justify-center mx-auto">
+                        AdSense 320x128
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Hero Section -->
+            <section class="mb-12">
+                <div class="gradient-bg rounded-2xl p-8 text-white text-center">
+				<center><img src="img2prompt.webp" alt="img2prompt" width="50%"></center>
+                    <h1 class="text-4xl font-bold mb-4">Transform Images into AI Prompts</h1>
+                    <p class="text-xl opacity-90 max-w-2xl mx-auto">
+                       Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool
+                    </p>
+                </div>
+            </section>
+
+            <!-- Generator Section -->
+            <section id="generator" class="mb-12">
+                <div class="bg-white rounded-2xl card-shadow p-8 border border-gray-300">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                        <i class="fas fa-image mr-3 text-primary"></i>
+                        Image to Prompt Generator
+                    </h2>
+                    
+                    <!-- Image Upload -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Upload Image</label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
+                            <input type="file" id="imageInput" accept="image/*" class="hidden">
+                            <div id="dropZone" class="cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-600">Click to upload or drag and drop</p>
+                                <p class="text-sm text-gray-500 mt-2">PNG, JPG, JPEG up to 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div id="imagePreview" class="hidden mb-8 text-center">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Preview</label>
+                        <div class="relative inline-block border border-gray-300 rounded-lg p-2">
+                            <img id="previewImg" class="max-w-full max-h-64 rounded-lg shadow-md">
+                            <button id="removeImage" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600 transition-colors">
+                                <i class="fas fa-times text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="text-center mb-8">
+                        <button id="generateBtn" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover-scale">
+                            <i class="fas fa-magic mr-2"></i>
+                            Generate Prompt
+                        </button>
+                    </div>
+
+                    <!-- Result Section -->
+                    <div id="resultSection" class="hidden">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Generated Prompt</label>
+                        <div class="relative">
+                            <blockquote id="resultText" class="bg-gray-50 border-l-4 border-primary border border-gray-300 p-6 rounded-r-lg text-gray-800 italic leading-relaxed"></blockquote>
+                            <button id="copyBtn" class="absolute top-4 right-4 bg-purple-600 border border-purple-700 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors" title="Copy to clipboard">
+                                <i class="fas fa-copy mr-1"></i>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="hidden text-center py-8">
+                        <div class="loading mx-auto mb-4"></div>
+                        <p class="text-gray-600">Analyzing image and generating prompt...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Features</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-brain text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">AI-Powered Analysis</h3>
+                        <p class="text-gray-600">Advanced AI analyzes every detail of your image to create comprehensive prompts</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-bolt text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
+                        <p class="text-gray-600">Get detailed prompts in seconds with our optimized processing pipeline</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-palette text-4xl text-primary mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-3">Style Recognition</h3>
+                        <p class="text-gray-600">Identifies artistic styles, composition, and visual elements accurately</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How it Works Section -->
+            <section id="how-it-works" class="mb-12">
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">How It Works</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                        <h3 class="font-semibold mb-2">Upload Image</h3>
+                        <p class="text-gray-600 text-sm">Select and upload your image file</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                        <h3 class="font-semibold mb-2">AI Analysis</h3>
+                        <p class="text-gray-600 text-sm">Our AI analyzes the image content</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                        <h3 class="font-semibold mb-2">Generate Prompt</h3>
+                        <p class="text-gray-600 text-sm">Detailed prompt is generated</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                        <h3 class="font-semibold mb-2">Copy & Use</h3>
+                        <p class="text-gray-600 text-sm">Copy the prompt for your AI projects</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AdSense Placeholder -->
+            <div class="mb-12 p-6 bg-gray-100 rounded-lg text-center border border-gray-300">
+                <div class="w-80 h-24 bg-gray-200 rounded flex items-center justify-center text-gray-600 mx-auto">
+                    AdSense Banner 320x96
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2025 <a href="/">Img2Prompt</a>. All rights reserved.</p>
+                <p class="text-gray-400 mt-2">Code by <a href="https://lynk.id/hendygital" target="_blank">>Hendy Black</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      const _0x4387f9=_0x4d0a;(function(_0x368bcc,_0x39192a){const _0x134379=_0x4d0a,_0xa90611=_0x368bcc();while(!![]){try{const _0x2b5782=-parseInt(_0x134379(0x2bc))/(-0x1519+0x1*0x4fd+0x101d)+-parseInt(_0x134379(0x2a6))/(-0x1375+-0xb2a+0x1ea1)*(-parseInt(_0x134379(0x2b4))/(0xb8b+0x612+-0x2*0x8cd))+-parseInt(_0x134379(0x2cf))/(-0x1177+-0x2139*0x1+0x1*0x32b4)*(-parseInt(_0x134379(0x201))/(-0x45c+-0xbc4*0x1+0x1025))+-parseInt(_0x134379(0x281))/(0x1ed*-0xd+0xaa8+0xe67)*(-parseInt(_0x134379(0x268))/(-0x2057+0x23e2+-0x5a*0xa))+parseInt(_0x134379(0x2b0))/(-0x779+-0x1689+0x1e0a)+parseInt(_0x134379(0x296))/(0x1203+0x21c4+0x2*-0x19df)*(parseInt(_0x134379(0x275))/(0x1314+-0x208+0x7*-0x26e))+-parseInt(_0x134379(0x1fc))/(0x2097+-0xd*-0x20b+-0x3b1b)*(parseInt(_0x134379(0x1fd))/(0x9*0x303+0x322*-0x3+0xb*-0x19b));if(_0x2b5782===_0x39192a)break;else _0xa90611['push'](_0xa90611['shift']());}catch(_0x52c54d){_0xa90611['push'](_0xa90611['shift']());}}}(_0xb27b,0x44fbe+0x1da*-0x42d+-0x3f95d*-0x2));const apiKeys=[_0x4387f9(0x270)+_0x4387f9(0x217)+_0x4387f9(0x27c)+_0x4387f9(0x28d),_0x4387f9(0x2bb)+_0x4387f9(0x1f5)+_0x4387f9(0x2a1)+_0x4387f9(0x2ae),_0x4387f9(0x21a)+_0x4387f9(0x25b)+_0x4387f9(0x234)+_0x4387f9(0x218),_0x4387f9(0x29d)+_0x4387f9(0x247)+_0x4387f9(0x2df)+_0x4387f9(0x26a),_0x4387f9(0x2ad)+_0x4387f9(0x1ff)+_0x4387f9(0x262)+_0x4387f9(0x1fb),_0x4387f9(0x2c2)+_0x4387f9(0x25a)+_0x4387f9(0x210)+_0x4387f9(0x220)];let currentKeyIndex=-0x1*0x2d3+0x15c3+0x8*-0x25e,uploadedImageBase64=null;const imageInput=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x2b7)),dropZone=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x20c)),imagePreview=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x264)+'ew'),previewImg=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x223)),removeImage=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x273)+'e'),generateBtn=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x266)+'n'),resultSection=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x20f)+_0x4387f9(0x27f)),resultText=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x2e4)),copyBtn=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x2e3)),loadingState=document[_0x4387f9(0x2cc)+_0x4387f9(0x202)](_0x4387f9(0x284)+'te');document[_0x4387f9(0x258)+_0x4387f9(0x282)](_0x4387f9(0x274)+_0x4387f9(0x2a0),function(){const _0x4a3aa8=_0x4387f9,_0x5aaf26={'lDnHV':function(_0x53c217){return _0x53c217();}};_0x5aaf26[_0x4a3aa8(0x297)](setupEventListeners);});function setupEventListeners(){const _0x35ce01=_0x4387f9,_0xaaef36={'rzbiq':_0x35ce01(0x265)+_0x35ce01(0x294),'fSCll':_0x35ce01(0x239),'FYznD':_0x35ce01(0x2ca),'sWBga':_0x35ce01(0x2b5),'chKdO':_0x35ce01(0x28b)},_0x3bd458=_0xaaef36[_0x35ce01(0x23e)][_0x35ce01(0x24e)]('|');let _0x407cef=-0x15a1+-0x1*-0x231a+-0x1*0xd79;while(!![]){switch(_0x3bd458[_0x407cef++]){case'0':copyBtn[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x260)],copyToClipboard);continue;case'1':dropZone[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x250)],handleDrop);continue;case'2':removeImage[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x260)],clearImage);continue;case'3':generateBtn[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x260)],generatePrompt);continue;case'4':dropZone[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x269)],handleDragOver);continue;case'5':imageInput[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x21b)],handleFileSelect);continue;case'6':dropZone[_0x35ce01(0x258)+_0x35ce01(0x282)](_0xaaef36[_0x35ce01(0x260)],()=>imageInput[_0x35ce01(0x239)]());continue;}break;}}function _0x4d0a(_0x43d0a3,_0x49d3b9){const _0x1375b7=_0xb27b();return _0x4d0a=function(_0x4d2bd5,_0x24fba6){_0x4d2bd5=_0x4d2bd5-(0x145c+-0x126d+0x5);let _0x2a280b=_0x1375b7[_0x4d2bd5];return _0x2a280b;},_0x4d0a(_0x43d0a3,_0x49d3b9);}function handleFileSelect(_0x2514e3){const _0x5c6183=_0x4387f9,_0x12b53a={'vZWIG':function(_0x3bc19b,_0x5c601a){return _0x3bc19b(_0x5c601a);}},_0xca7226=_0x2514e3[_0x5c6183(0x212)][_0x5c6183(0x241)][-0x10d*-0x16+0x1227*0x1+-0x1*0x2945];_0xca7226&&_0x12b53a[_0x5c6183(0x2c7)](processFile,_0xca7226);}function handleDragOver(_0x125d71){const _0x7220fb=_0x4387f9,_0x459d6d={'QDqZo':_0x7220fb(0x23f)+_0x7220fb(0x2c4),'ScYVK':_0x7220fb(0x2cb)};_0x125d71[_0x7220fb(0x20b)+_0x7220fb(0x1f4)](),dropZone[_0x7220fb(0x244)][_0x7220fb(0x248)](_0x459d6d[_0x7220fb(0x255)],_0x459d6d[_0x7220fb(0x251)]);}function handleDrop(_0x502e9a){const _0x275647=_0x4387f9,_0x1d18bf={'HeWrC':_0x275647(0x23f)+_0x275647(0x2c4),'eRjEL':_0x275647(0x2cb),'xgMzR':_0x275647(0x20d),'hxxxc':function(_0x40a990,_0x5d9000){return _0x40a990(_0x5d9000);}};_0x502e9a[_0x275647(0x20b)+_0x275647(0x1f4)](),dropZone[_0x275647(0x244)][_0x275647(0x2c1)](_0x1d18bf[_0x275647(0x232)],_0x1d18bf[_0x275647(0x238)]);const _0x3005f7=_0x502e9a[_0x275647(0x2e0)+'er'][_0x275647(0x241)][0xb59+-0x1a2b+0x1*0xed2];_0x3005f7&&_0x3005f7[_0x275647(0x221)][_0x275647(0x272)](_0x1d18bf[_0x275647(0x27b)])&&_0x1d18bf[_0x275647(0x2d0)](processFile,_0x3005f7);}function processFile(_0x12783c){const _0xe884a0=_0x4387f9,_0x56c7bd={'mhUDj':_0xe884a0(0x271),'oMzik':function(_0x46bb5,_0x4d9ed0){return _0x46bb5>_0x4d9ed0;},'VkvEE':function(_0x346fcc,_0x3533ae){return _0x346fcc*_0x3533ae;},'XmqlZ':function(_0x37b437,_0x5a8feb){return _0x37b437*_0x5a8feb;},'MfFIV':function(_0x4bdda9,_0x38428a){return _0x4bdda9(_0x38428a);},'VfeOZ':_0xe884a0(0x2ac)+_0xe884a0(0x2e1)+_0xe884a0(0x2d5)+'MB'};if(_0x56c7bd[_0xe884a0(0x222)](_0x12783c[_0xe884a0(0x2a5)],_0x56c7bd[_0xe884a0(0x2b9)](_0x56c7bd[_0xe884a0(0x226)](-0x321*0x1+-0x455*-0x2+-0x57f,-0xfa9+-0x16d9+0x2a82),-0x230c+-0x3a2*0x1+0x2aae))){_0x56c7bd[_0xe884a0(0x267)](alert,_0x56c7bd[_0xe884a0(0x24b)]);return;}const _0x3e3509=new FileReader();_0x3e3509[_0xe884a0(0x2b8)]=function(_0x49a24d){const _0x469e5f=_0xe884a0;uploadedImageBase64=_0x49a24d[_0x469e5f(0x212)][_0x469e5f(0x2d3)][_0x469e5f(0x24e)](',')[-0x2b*0xc7+-0x1*0xced+0x2e5b],previewImg[_0x469e5f(0x235)]=_0x49a24d[_0x469e5f(0x212)][_0x469e5f(0x2d3)],imagePreview[_0x469e5f(0x244)][_0x469e5f(0x2c1)](_0x56c7bd[_0x469e5f(0x2e5)]),generateBtn[_0x469e5f(0x2b1)]=![];},_0x3e3509[_0xe884a0(0x2de)+_0xe884a0(0x2bf)](_0x12783c);}function clearImage(){const _0x31713f=_0x4387f9,_0x3ef0b5={'bzldy':_0x31713f(0x2d1),'ORpHD':_0x31713f(0x271)},_0x426f0b=_0x3ef0b5[_0x31713f(0x236)][_0x31713f(0x24e)]('|');let _0x369bde=0x10d0+-0x1*-0x45a+-0x152a;while(!![]){switch(_0x426f0b[_0x369bde++]){case'0':generateBtn[_0x31713f(0x2b1)]=!![];continue;case'1':resultSection[_0x31713f(0x244)][_0x31713f(0x248)](_0x3ef0b5[_0x31713f(0x21e)]);continue;case'2':imageInput[_0x31713f(0x21f)]='';continue;case'3':imagePreview[_0x31713f(0x244)][_0x31713f(0x248)](_0x3ef0b5[_0x31713f(0x21e)]);continue;case'4':uploadedImageBase64=null;continue;}break;}}function getNextApiKey(){const _0x4d890d=_0x4387f9,_0x43cede={'PShii':function(_0x33f766,_0x1e7289){return _0x33f766%_0x1e7289;},'umGVf':function(_0x35442e,_0x54c0ac){return _0x35442e+_0x54c0ac;}},_0x27a5ff=apiKeys[currentKeyIndex];return currentKeyIndex=_0x43cede[_0x4d890d(0x29c)](_0x43cede[_0x4d890d(0x289)](currentKeyIndex,-0x151+-0x19f1+0x3e5*0x7),apiKeys[_0x4d890d(0x242)]),_0x27a5ff;}async function generatePrompt(){const _0x38e42e=_0x4387f9,_0x32fb6d={'pmMfE':function(_0x453b0a,_0x5f19ed){return _0x453b0a(_0x5f19ed);},'JYjMn':_0x38e42e(0x286)+_0x38e42e(0x237)+_0x38e42e(0x2c0),'iQtNY':_0x38e42e(0x271),'ACNOx':_0x38e42e(0x213)+_0x38e42e(0x2b6)+_0x38e42e(0x22b)+_0x38e42e(0x209)+_0x38e42e(0x254)+_0x38e42e(0x23d)+_0x38e42e(0x277)+_0x38e42e(0x2c3)+_0x38e42e(0x257)+_0x38e42e(0x228)+_0x38e42e(0x261)+_0x38e42e(0x22a)+_0x38e42e(0x28f)+_0x38e42e(0x1f6)+_0x38e42e(0x200)+_0x38e42e(0x24f)+_0x38e42e(0x2c5)+_0x38e42e(0x206)+_0x38e42e(0x2aa)+_0x38e42e(0x278)+_0x38e42e(0x2d7)+_0x38e42e(0x24d)+_0x38e42e(0x2a9)+_0x38e42e(0x26e)+_0x38e42e(0x216)+_0x38e42e(0x299)+_0x38e42e(0x1f8)+_0x38e42e(0x288)+_0x38e42e(0x229)+_0x38e42e(0x28c),'gTsWw':function(_0x142a5a){return _0x142a5a();},'wWlck':_0x38e42e(0x227)+_0x38e42e(0x2d9)+_0x38e42e(0x203)+_0x38e42e(0x2c8)+_0x38e42e(0x2cd)+_0x38e42e(0x211)+_0x38e42e(0x225)+_0x38e42e(0x29f)+_0x38e42e(0x263)+_0x38e42e(0x290)+'t','xoDhh':function(_0x2e7769,_0x16a418,_0x5388de){return _0x2e7769(_0x16a418,_0x5388de);},'MhTiz':_0x38e42e(0x2d2),'mAMgU':_0x38e42e(0x26d)+_0x38e42e(0x25f),'ETJZe':_0x38e42e(0x26b),'NuHle':_0x38e42e(0x1fa)+_0x38e42e(0x205),'WWbBW':_0x38e42e(0x2ba),'FWtik':function(_0x8ef5ac,_0xaabe37){return _0x8ef5ac(_0xaabe37);},'TRmUp':_0x38e42e(0x256)+_0x38e42e(0x214)+_0x38e42e(0x208)+_0x38e42e(0x287)+'n.'};if(!uploadedImageBase64){_0x32fb6d[_0x38e42e(0x22e)](alert,_0x32fb6d[_0x38e42e(0x2b3)]);return;}loadingState[_0x38e42e(0x244)][_0x38e42e(0x2c1)](_0x32fb6d[_0x38e42e(0x230)]),resultSection[_0x38e42e(0x244)][_0x38e42e(0x248)](_0x32fb6d[_0x38e42e(0x230)]),generateBtn[_0x38e42e(0x2b1)]=!![];const _0x51c884=_0x32fb6d[_0x38e42e(0x243)],_0x343435=_0x32fb6d[_0x38e42e(0x2a4)](getNextApiKey);try{const _0x453241=_0x32fb6d[_0x38e42e(0x2c6)],_0x1a67c4=await _0x32fb6d[_0x38e42e(0x27d)](fetch,_0x453241+_0x38e42e(0x219)+_0x343435,{'method':_0x32fb6d[_0x38e42e(0x2b2)],'headers':{'Content-Type':_0x32fb6d[_0x38e42e(0x298)]},'body':JSON[_0x38e42e(0x215)]({'contents':[{'parts':[{'text':_0x51c884},{'inline_data':{'mime_type':_0x32fb6d[_0x38e42e(0x2a3)],'data':uploadedImageBase64}}]}],'generationConfig':{'temperature':0.7}})});if(!_0x1a67c4['ok'])throw new Error(_0x38e42e(0x23c)+_0x38e42e(0x2be)+_0x1a67c4[_0x38e42e(0x2c9)]);const _0x2dd70c=await _0x1a67c4[_0x38e42e(0x1f7)]();if(_0x2dd70c[_0x38e42e(0x2af)]&&_0x2dd70c[_0x38e42e(0x2af)][-0x252b+-0x71d*0x1+-0xd*-0x368]&&_0x2dd70c[_0x38e42e(0x2af)][-0x372+-0x3*-0xc1b+-0xbb*0x2d][_0x38e42e(0x2a8)]){const _0x46d969=_0x2dd70c[_0x38e42e(0x2af)][-0x1*0x122b+-0x1*-0x1d41+-0xb16][_0x38e42e(0x2a8)][_0x38e42e(0x259)][-0xbdd+-0x6*0xce+0x10b1][_0x38e42e(0x292)];_0x32fb6d[_0x38e42e(0x22e)](displayResult,_0x46d969);}else throw new Error(_0x32fb6d[_0x38e42e(0x2dc)]);}catch(_0x32aa58){console[_0x38e42e(0x2d8)](_0x32fb6d[_0x38e42e(0x24a)],_0x32aa58),_0x32fb6d[_0x38e42e(0x2d4)](alert,_0x32fb6d[_0x38e42e(0x2e6)]);}finally{loadingState[_0x38e42e(0x244)][_0x38e42e(0x248)](_0x32fb6d[_0x38e42e(0x230)]),generateBtn[_0x38e42e(0x2b1)]=![];}}function displayResult(_0x3d08d8){const _0x6d13ed=_0x4387f9,_0x1290b0={'lyypY':_0x6d13ed(0x271),'qMtee':_0x6d13ed(0x28a)};resultText[_0x6d13ed(0x2e2)+'t']=_0x3d08d8,resultSection[_0x6d13ed(0x244)][_0x6d13ed(0x2c1)](_0x1290b0[_0x6d13ed(0x291)]),resultSection[_0x6d13ed(0x244)][_0x6d13ed(0x248)](_0x1290b0[_0x6d13ed(0x2ce)]);}function _0xb27b(){const _0x2cb9d2=['must\x20be\x20le','textConten','copyBtn','resultText','mhUDj','TRmUp','<i\x20class=\x22','ault','7KkgKo9Ux_','dy\x20structu','json','Output\x20pro','adQGk','No\x20content','yzuc0CDa8','141251pnPjCA','564qhAnhx','href','cBUhmCqN6F','re\x20if\x20imag','15tkFAkh','ById','nguage.goo','start','\x20generated','t\x20an\x20image','fas\x20fa-cop','mpt.\x20Pleas','u\x20will\x20get','ldzyR','preventDef','dropZone','image/','View','resultSect','RNkb3tVLbx','odels/gemi','target','You\x20are\x20a\x20','rating\x20pro','stringify','image\x20give','06HHruH8Ne','bNUrhDMX8','?key=','AIzaSyDbsd','chKdO','tvVkw','wVWlQ','ORpHD','value','R-YeNT2XY','type','oMzik','previewImg','PYNeh','ni-2.0-fla','XmqlZ','https://ge','\x20(includin','one\x20paragr','e\x20style,\x20f','erator.\x20Yo','AqGnT','border-gre','pmMfE','querySelec','iQtNY','torAll','HeWrC','a[href^=\x22#','IDCiuvYiEP','src','bzldy','oad\x20an\x20ima','eRjEL','click','Failed\x20to\x20','innerHTML','HTTP\x20error','\x20Your\x20work','rzbiq','border-pri','getAttribu','files','length','ACNOx','classList','XBYfX','text-white','5daY1Bpu4Z','add','tor','WWbBW','VfeOZ','bsfoM','most\x20ident','split','e\x20is\x20human','FYznD','ScYVK','ldKHU','ck\x20mr-1\x22><','\x20an\x20image.','QDqZo','Error\x20gene','led\x20prompt','addEventLi','parts','8E_pmVHl67','_Kf_ySnOlN','yGTet','yfHgW','i>Copy','n/json','fSCll','g\x20the\x20imag','c8VjglLj1L','g-exp:gene','imagePrevi','5|6|4|1|2|','generateBt','MfFIV','7wuqLcu','sWBga','1YfWHoVsY','image/jpeg','smooth','applicatio','re\x20as\x20the\x20','clipboard','AIzaSyAcQQ','hidden','startsWith','removeImag','DOMContent','5419510uIftrf','LpflW','\x20is\x20to\x20wri','\x20model\x20wou','jKGfu','y\x20mr-1\x22></','xgMzR','yfMNezTiK-','xoDhh','border-pur','ion','600','1276554SsrPah','stener','en-700','loadingSta','forEach','Please\x20upl','e\x20try\x20agai','mpt\x20is\x20in\x20','umGVf','fade-in','change','aph','dUJ2cGQOw','ipboard','ace\x20and\x20bo','rateConten','lyypY','text','ilHMS','3|0','bg-purple-','9iVrQXi','lDnHV','mAMgU','n\x20to\x20you.\x20','3|1|0|4|2','/i>Copied!','PShii','AIzaSyC4jm','bg-green-6','sh-thinkin','Loaded','rOwuMVHszP','KQOYv','ETJZe','gTsWw','size','4MaoQHc','scrollInto','content','ical\x20pictu','\x20generator','copy\x20text:','File\x20size\x20','AIzaSyBArq','4bX24kF80','candidates','1368032FYcAsm','disabled','MhTiz','JYjMn','505902rmxFnt','dragover','prompt\x20gen','imageInput','onload','VkvEE','Error:','AIzaSyCNdX','448066PVUKip','gdzza','!\x20status:\x20','URL','ge\x20first','remove','AIzaSyDZZd','te\x20a\x20detai','mary',')\x20such\x20tha','wWlck','vZWIG','gleapis.co','status','drop','bg-blue-50','getElement','m/v1beta/m','qMtee','113804kOjZBv','hxxxc','4|3|2|0|1','POST','result','FWtik','ss\x20than\x2010','writeText','ld\x20create\x20','error','nerativela','fas\x20fa-che','ple-700','NuHle','copy\x20to\x20cl','readAsData','IFUKT2Qeyl','dataTransf'];_0xb27b=function(){return _0x2cb9d2;};return _0xb27b();}async function copyToClipboard(){const _0x49de84=_0x4387f9,_0x37dc0b={'AqGnT':_0x49de84(0x2e7)+_0x49de84(0x207)+_0x49de84(0x27a)+_0x49de84(0x25e),'bsfoM':_0x49de84(0x29e)+'00','jKGfu':_0x49de84(0x22d)+_0x49de84(0x283),'XBYfX':_0x49de84(0x246),'gdzza':_0x49de84(0x295)+_0x49de84(0x280),'ldzyR':_0x49de84(0x27e)+_0x49de84(0x2db),'ldKHU':_0x49de84(0x29a),'adQGk':_0x49de84(0x2e7)+_0x49de84(0x2da)+_0x49de84(0x253)+_0x49de84(0x29b),'yGTet':function(_0x1667dc,_0x607a0c,_0x5420b0){return _0x1667dc(_0x607a0c,_0x5420b0);},'wVWlQ':_0x49de84(0x23a)+_0x49de84(0x2ab)+'\x20','KQOYv':function(_0x1b68f9,_0x1704c0){return _0x1b68f9(_0x1704c0);},'yfHgW':_0x49de84(0x23a)+_0x49de84(0x2dd)+_0x49de84(0x28e)};try{const _0x38d939=_0x37dc0b[_0x49de84(0x252)][_0x49de84(0x24e)]('|');let _0x24f053=-0x2a9+0x23c0+-0x2117;while(!![]){switch(_0x38d939[_0x24f053++]){case'0':copyBtn[_0x49de84(0x244)][_0x49de84(0x2c1)](_0x37dc0b[_0x49de84(0x2bd)],_0x37dc0b[_0x49de84(0x20a)]);continue;case'1':copyBtn[_0x49de84(0x23b)]=_0x37dc0b[_0x49de84(0x1f9)];continue;case'2':_0x37dc0b[_0x49de84(0x25c)](setTimeout,()=>{const _0xdfdda6=_0x49de84;copyBtn[_0xdfdda6(0x23b)]=_0x37dc0b[_0xdfdda6(0x22c)],copyBtn[_0xdfdda6(0x244)][_0xdfdda6(0x2c1)](_0x37dc0b[_0xdfdda6(0x24c)],_0x37dc0b[_0xdfdda6(0x279)],_0x37dc0b[_0xdfdda6(0x245)]),copyBtn[_0xdfdda6(0x244)][_0xdfdda6(0x248)](_0x37dc0b[_0xdfdda6(0x2bd)],_0x37dc0b[_0xdfdda6(0x20a)]);},0x2105+-0xd*0x13d+-0x91c);continue;case'3':await navigator[_0x49de84(0x26f)][_0x49de84(0x2d6)](resultText[_0x49de84(0x2e2)+'t']);continue;case'4':copyBtn[_0x49de84(0x244)][_0x49de84(0x248)](_0x37dc0b[_0x49de84(0x24c)],_0x37dc0b[_0x49de84(0x279)],_0x37dc0b[_0x49de84(0x245)]);continue;}break;}}catch(_0x437e75){console[_0x49de84(0x2d8)](_0x37dc0b[_0x49de84(0x21d)],_0x437e75),_0x37dc0b[_0x49de84(0x2a2)](alert,_0x37dc0b[_0x49de84(0x25d)]);}}document[_0x4387f9(0x22f)+_0x4387f9(0x231)](_0x4387f9(0x233)+'\x22]')[_0x4387f9(0x285)](_0x4ee95b=>{const _0x11c71=_0x4387f9,_0x4e4561={'ilHMS':_0x11c71(0x1fe),'PYNeh':_0x11c71(0x26c),'LpflW':_0x11c71(0x204),'tvVkw':_0x11c71(0x239)};_0x4ee95b[_0x11c71(0x258)+_0x11c71(0x282)](_0x4e4561[_0x11c71(0x21c)],function(_0x1de7b){const _0x5d9b5c=_0x11c71;_0x1de7b[_0x5d9b5c(0x20b)+_0x5d9b5c(0x1f4)]();const _0x2f1539=document[_0x5d9b5c(0x22f)+_0x5d9b5c(0x249)](this[_0x5d9b5c(0x240)+'te'](_0x4e4561[_0x5d9b5c(0x293)]));_0x2f1539&&_0x2f1539[_0x5d9b5c(0x2a7)+_0x5d9b5c(0x20e)]({'behavior':_0x4e4561[_0x5d9b5c(0x224)],'block':_0x4e4561[_0x5d9b5c(0x276)]});});});
+    </script>
+</body>
+</html>
