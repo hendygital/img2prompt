@@ -12,10 +12,11 @@
     <meta property="og:url" content="https://img2prompt.pages.dev/">
 	<link rel="canonical" href="https://img2prompt.pages.dev">
     <meta property="og:image" content="img2prompt.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="img2prompt">
-	    <meta name="google-site-verification" content="RSr3FMx8orgDUJ0eSOwKq51S_LNk-xIWJECwv41sgS8" />
+	<meta name="robots" content="index, follow">
+	<meta name="google-site-verification" content="RSr3FMx8orgDUJ0eSOwKq51S_LNk-xIWJECwv41sgS8" />
 	<meta name="google-adsense-account" content="ca-pub-6453122542011584">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image to Prompt Generator">
     <meta name="twitter:description" content="Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool">
     <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='preconnect'/>
 	<link crossorigin='anonymous' href='https://cdn.tailwindcss.com' rel='preconnect'/>
@@ -76,31 +77,6 @@
             }
         }
     </script>
-	<script>
-	// Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
-
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            
-            // Toggle icon between bars and times
-            if (mobileMenu.classList.contains('hidden')) {
-                mobileMenuIcon.className = 'fas fa-bars text-2xl';
-            } else {
-                mobileMenuIcon.className = 'fas fa-times text-2xl';
-            }
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.className = 'fas fa-bars text-2xl';
-            });
-        });
-	</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -136,9 +112,21 @@
         .hover-scale:hover {
             transform: scale(1.02);
         }
+		.responsive-img {
+            width: 50%; /* Lebar 50% di desktop */
+            max-width: 100%; /* Pastikan tidak melebihi lebar kontainer */
+            height: auto; /* Menjaga proporsi */
+        }
+
+        /* Media query untuk perangkat mobile */
+        @media (max-width: 640px) {
+            .responsive-img {
+                width: 100%; /* Lebar 100% di mobile */
+            }
+        }
     </style>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6453122542011584"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6453122542011584"
+     crossorigin="anonymous"></script>	
 </head>
 <body class="bg-gray-50 font-sans">
     <!-- Anti DevTools Protection -->
@@ -174,7 +162,7 @@
         })();
     </script>
 
-      <!-- Sticky Navbar -->
+    <!-- Sticky Navbar -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -226,9 +214,10 @@
             </div>
         </div>
     </nav>
-    <div class="flex min-h-screen">
-        <!-- Sticky Sidebar -->
-        <aside class="sticky top-16 h-[calc(100vh-4rem)] w-64 bg-white border-r border-gray-200 overflow-y-auto">
+
+    <div class="lg:flex min-h-screen">
+        <!-- Sticky Sidebar - Hidden on mobile -->
+        <aside class="hidden lg:block sticky top-16 h-[calc(100vh-4rem)] w-64 bg-white border-r border-gray-200 overflow-y-auto">
             <div class="p-6">
                 <h2 class="text-lg font-semibold text-gray-900 mb-4">Navigation</h2>
                 <nav class="space-y-2">
@@ -255,44 +244,44 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 p-6">
+        <main class="flex-1 p-3 sm:p-6">
             <!-- Hero Section -->
-            <section class="mb-12">
-                <div class="gradient-bg rounded-2xl p-8 text-white text-center">
-				<center><img src="img2prompt.webp" alt="img2prompt" width="50%"></center>
-                    <h1 class="text-4xl font-bold mb-4">Transform Images into AI Prompts</h1>
-                    <p class="text-xl opacity-90 max-w-2xl mx-auto">
+            <section class="mb-8 sm:mb-12">
+                <div class="gradient-bg rounded-2xl p-4 sm:p-8 text-white text-center">
+                    <center><img src="img2prompt.webp" alt="img2prompt" class="responsive-img w-3/4 sm:w-1/2 max-w-sm mx-auto mb-4"></center>
+                    <h1 class="text-2xl sm:text-4xl font-bold mb-4">Transform Images into AI Prompts</h1>
+                    <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto">
                        Free Image to Prompt Generator Online, transform your images into detailed AI prompts with our advanced image analysis tool
                     </p>
                 </div>
             </section>
 
             <!-- Generator Section -->
-            <section id="generator" class="mb-12">
-                <div class="bg-white rounded-2xl card-shadow p-8 border border-gray-300">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-                        <i class="fas fa-image mr-3 text-primary"></i>
+            <section id="generator" class="mb-8 sm:mb-12">
+                <div class="bg-white rounded-2xl card-shadow p-4 sm:p-8 border border-gray-300">
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
+                        <i class="fas fa-image mr-2 sm:mr-3 text-primary"></i>
                         Image to Prompt Generator
                     </h2>
                     
                     <!-- Image Upload -->
-                    <div class="mb-8">
+                    <div class="mb-6 sm:mb-8">
                         <label class="block text-sm font-medium text-gray-700 mb-3">Upload Image</label>
-                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-8 text-center hover:border-primary transition-colors">
                             <input type="file" id="imageInput" accept="image/*" class="hidden">
                             <div id="dropZone" class="cursor-pointer">
-                                <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
-                                <p class="text-gray-600">Click to upload or drag and drop</p>
-                                <p class="text-sm text-gray-500 mt-2">PNG, JPG, JPEG up to 10MB</p>
+                                <i class="fas fa-cloud-upload-alt text-3xl sm:text-4xl text-gray-400 mb-3 sm:mb-4"></i>
+                                <p class="text-gray-600 text-sm sm:text-base">Click to upload or drag and drop</p>
+                                <p class="text-xs sm:text-sm text-gray-500 mt-2">PNG, JPG, JPEG up to 10MB</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Image Preview -->
-                    <div id="imagePreview" class="hidden mb-8 text-center">
+                    <div id="imagePreview" class="hidden mb-6 sm:mb-8 text-center">
                         <label class="block text-sm font-medium text-gray-700 mb-3">Preview</label>
                         <div class="relative inline-block border border-gray-300 rounded-lg p-2">
-                            <img id="previewImg" class="max-w-full max-h-64 rounded-lg shadow-md">
+                            <img id="previewImg" class="max-w-full max-h-48 sm:max-h-64 rounded-lg shadow-md">
                             <button id="removeImage" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center hover:bg-red-600 transition-colors">
                                 <i class="fas fa-times text-xs"></i>
                             </button>
@@ -300,8 +289,8 @@
                     </div>
 
                     <!-- Generate Button -->
-                    <div class="text-center mb-8">
-                        <button id="generateBtn" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover-scale">
+                    <div class="text-center mb-6 sm:mb-8">
+                        <button id="generateBtn" class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed hover-scale w-full sm:w-auto">
                             <i class="fas fa-magic mr-2"></i>
                             Generate Prompt
                         </button>
@@ -311,74 +300,74 @@
                     <div id="resultSection" class="hidden">
                         <label class="block text-sm font-medium text-gray-700 mb-3">Generated Prompt</label>
                         <div class="relative">
-                            <blockquote id="resultText" class="bg-gray-50 border-l-4 border-primary border border-gray-300 p-6 rounded-r-lg text-gray-800 italic leading-relaxed"></blockquote>
-                            <button id="copyBtn" class="absolute top-4 right-4 bg-purple-600 border border-purple-700 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors" title="Copy to clipboard">
+                            <blockquote id="resultText" class="bg-gray-50 border-l-4 border-primary border border-gray-300 p-4 sm:p-6 rounded-r-lg text-gray-800 italic leading-relaxed text-sm sm:text-base"></blockquote>
+                            <button id="copyBtn" class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-purple-600 border border-purple-700 text-white px-2 py-1 sm:px-3 sm:py-2 rounded-lg hover:bg-purple-700 transition-colors text-xs sm:text-sm" title="Copy to clipboard">
                                 <i class="fas fa-copy mr-1"></i>
-                                Copy
+                                <span class="hidden sm:inline">Copy</span>
                             </button>
                         </div>
                     </div>
 
                     <!-- Loading State -->
-                    <div id="loadingState" class="hidden text-center py-8">
+                    <div id="loadingState" class="hidden text-center py-6 sm:py-8">
                         <div class="loading mx-auto mb-4"></div>
-                        <p class="text-gray-600">Analyzing image and generating prompt...</p>
+                        <p class="text-gray-600 text-sm sm:text-base">Analyzing image and generating prompt...</p>
                     </div>
                 </div>
             </section>
 
             <!-- Features Section -->
-            <section id="features" class="mb-12">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Features</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
-                        <i class="fas fa-brain text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">AI-Powered Analysis</h3>
-                        <p class="text-gray-600">Advanced AI analyzes every detail of your image to create comprehensive prompts</p>
+            <section id="features" class="mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <div class="bg-white rounded-xl p-4 sm:p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-brain text-3xl sm:text-4xl text-primary mb-3 sm:mb-4"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">AI-Powered Analysis</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Advanced AI analyzes every detail of your image to create comprehensive prompts</p>
                     </div>
-                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
-                        <i class="fas fa-bolt text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">Lightning Fast</h3>
-                        <p class="text-gray-600">Get detailed prompts in seconds with our optimized processing pipeline</p>
+                    <div class="bg-white rounded-xl p-4 sm:p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-bolt text-3xl sm:text-4xl text-primary mb-3 sm:mb-4"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Lightning Fast</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Get detailed prompts in seconds with our optimized processing pipeline</p>
                     </div>
-                    <div class="bg-white rounded-xl p-6 card-shadow text-center hover-scale border border-gray-300">
-                        <i class="fas fa-palette text-4xl text-primary mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-3">Style Recognition</h3>
-                        <p class="text-gray-600">Identifies artistic styles, composition, and visual elements accurately</p>
+                    <div class="bg-white rounded-xl p-4 sm:p-6 card-shadow text-center hover-scale border border-gray-300">
+                        <i class="fas fa-palette text-3xl sm:text-4xl text-primary mb-3 sm:mb-4"></i>
+                        <h3 class="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">Style Recognition</h3>
+                        <p class="text-gray-600 text-sm sm:text-base">Identifies artistic styles, composition, and visual elements accurately</p>
                     </div>
                 </div>
             </section>
 
             <!-- How it Works Section -->
-            <section id="how-it-works" class="mb-12">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">How It Works</h2>
-                <div class="grid md:grid-cols-4 gap-6">
+            <section id="how-it-works" class="mb-8 sm:mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">How It Works</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                     <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                        <h3 class="font-semibold mb-2">Upload Image</h3>
-                        <p class="text-gray-600 text-sm">Select and upload your image file</p>
+                        <div class="bg-primary text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">1</div>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Upload Image</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm">Select and upload your image file</p>
                     </div>
                     <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                        <h3 class="font-semibold mb-2">AI Analysis</h3>
-                        <p class="text-gray-600 text-sm">Our AI analyzes the image content</p>
+                        <div class="bg-primary text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">2</div>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">AI Analysis</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm">Our AI analyzes the image content</p>
                     </div>
                     <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                        <h3 class="font-semibold mb-2">Generate Prompt</h3>
-                        <p class="text-gray-600 text-sm">Detailed prompt is generated</p>
+                        <div class="bg-primary text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">3</div>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Generate Prompt</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm">Detailed prompt is generated</p>
                     </div>
                     <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
-                        <h3 class="font-semibold mb-2">Copy & Use</h3>
-                        <p class="text-gray-600 text-sm">Copy the prompt for your AI projects</p>
+                        <div class="bg-primary text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">4</div>
+                        <h3 class="font-semibold mb-2 text-sm sm:text-base">Copy & Use</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm">Copy the prompt for your AI projects</p>
                     </div>
                 </div>
             </section>
 
             <!-- AdSense Placeholder -->
-            <div class="mb-12 p-6 bg-gray-100 rounded-lg text-center border border-gray-300">
-                <div class="w-80 h-24 bg-gray-200 rounded flex items-center justify-center text-gray-600 mx-auto">
+            <div class="mb-8 sm:mb-12 p-4 sm:p-6 bg-gray-100 rounded-lg text-center border border-gray-300">
+                <div class="w-full max-w-80 h-20 sm:h-24 bg-gray-200 rounded flex items-center justify-center text-gray-600 mx-auto">
                     Responsive Ads
                 </div>
             </div>
@@ -391,7 +380,7 @@
     </footer>
 
     <script>
-        const _0x4a1a4a=_0x2987;(function(_0x273691,_0x4c4791){const _0x57cb1e=_0x2987,_0x475557=_0x273691();while(!![]){try{const _0xa03868=parseInt(_0x57cb1e(0x11c))/(0x19d7+0x1*0x128f+-0x2c65)+parseInt(_0x57cb1e(0x16d))/(0x1961+0xd0f+-0x266e)*(parseInt(_0x57cb1e(0x12b))/(-0x1d75+-0x97*-0x21+0xa01))+parseInt(_0x57cb1e(0x196))/(-0x2209*0x1+-0xb03+0x2d10)+-parseInt(_0x57cb1e(0x17a))/(-0x17*0xad+0x1*0x16e1+-0x751)*(parseInt(_0x57cb1e(0x194))/(-0x1c*-0x61+0x2213+-0x2ca9))+-parseInt(_0x57cb1e(0xc5))/(-0xecc*0x1+0x6cf+0x804)*(-parseInt(_0x57cb1e(0x162))/(0x1644+-0xb5+0x21*-0xa7))+-parseInt(_0x57cb1e(0xff))/(-0x1a75+0x68*0x35+0x27b*0x2)*(-parseInt(_0x57cb1e(0x1a4))/(0x43c+-0x46c*0x2+0x4a6))+-parseInt(_0x57cb1e(0x15a))/(-0x17e9+0x223+0x15d1)*(parseInt(_0x57cb1e(0x1aa))/(-0x3*0xbfb+-0x2128+0x4525));if(_0xa03868===_0x4c4791)break;else _0x475557['push'](_0x475557['shift']());}catch(_0x52abec){_0x475557['push'](_0x475557['shift']());}}}(_0x220a,0x3*0x1ebed+-0xa5a3f+0x10079*0xc));const apiKeys=[_0x4a1a4a(0xf1)+_0x4a1a4a(0x187)+_0x4a1a4a(0x9a)+_0x4a1a4a(0x151),_0x4a1a4a(0x189)+_0x4a1a4a(0xa5)+_0x4a1a4a(0x140)+_0x4a1a4a(0x175),_0x4a1a4a(0x136)+_0x4a1a4a(0xc0)+_0x4a1a4a(0x188)+_0x4a1a4a(0xf5),_0x4a1a4a(0x138)+_0x4a1a4a(0x193)+_0x4a1a4a(0x127)+_0x4a1a4a(0x19e),_0x4a1a4a(0x17b)+_0x4a1a4a(0xf9)+_0x4a1a4a(0xec)+_0x4a1a4a(0x181),_0x4a1a4a(0x15d)+_0x4a1a4a(0x103)+_0x4a1a4a(0x154)+_0x4a1a4a(0x167)];let currentKeyIndex=-0x1423*-0x1+-0x20f4+0xcd1,uploadedImageBase64=null;function _0x220a(){const _0x5afaeb=['HTTP\x20error','hidden','href','dragover','38qvLLry','parts','Error:','XyvAz','g\x20the\x20imag','l\x20rights\x20r','e\x20style,\x20f','ss\x20than\x2010','4bX24kF80','6|4|3|0|1|','e\x20is\x20human','tYHpu','XyzXg','320qqcjdP','AIzaSyBArq','RvEWO','image\x20give','XhYxI','getElement','startsWith','yzuc0CDa8','rANNo','m/v1beta/m','copyBtn','border-gre','readAsData','06HHruH8Ne','IDCiuvYiEP','AIzaSyCNdX','rbTBQ','tor','erator.\x20Yo','add','\x20(includin','\x20is\x20to\x20wri','aph','lPhFs','pFArA','5daY1Bpu4Z','58332YVKncy','writeText','3237596zyBHxk','fas\x20fa-cop','mx-auto\x20px','lmoDc','generateBt','\x20\x20\x20\x20</div>','2|3|0|1|4','\x22https://i','1YfWHoVsY','eserved.</','start','WdbOJ','RPasw','loadingSta','8321410ALflhw','imageInput','zTJjT','imagePrevi','smooth','error','132GHsvJv','sh-thinkin','JoPxc','ault','dropZone','nerativela','dataTransf','pt</a>.\x20Al','View','\x20generated','<i\x20class=\x22','size','div','previewImg','stener','nguage.goo','fWgxn','yfMNezTiK-','https://ge','ipboard','one\x20paragr','No\x20content','EfbYH','src','ZAQOj','json','\x0a\x20\x20\x20\x20','xXeQt','7KkgKo9Ux_','appendChil','DJbCb','n\x20to\x20you.\x20','p>\x0a\x20\x20\x20\x20\x20\x20\x20','Enpuo','gVxTf','en-700','border-pur','COWWX','TENzD','re\x20if\x20imag','type','\x20Your\x20work','IZJxc','RNbJV','innerHTML','></p>\x0a\x20\x20\x20\x20','-4\x20sm:px-6','pages.dev/','DYSVi','bg-green-6','u\x20will\x20get','1|2|3|0|4','copy\x20text:','\x20model\x20wou','gTsCw','_Kf_ySnOlN','xXBKg','must\x20be\x20le','g-exp:gene','mpt.\x20Pleas','7gitONO','ass=\x22text-','e\x20try\x20agai','Error\x20gene','aLeEu','torAll','DOMContent','You\x20are\x20a\x20','div\x20class=','fade-in','prompt\x20gen','ulnUO','value','qkWjz','mpt\x20is\x20in\x20','\x20lg:px-8','disabled','split','target','image/','re\x20as\x20the\x20','resultText','ext-white.','SJmrr','createElem','y\x20Black</a','footer.bg-','t\x20an\x20image','er\x22>\x0a\x20\x20\x20\x20\x20','Please\x20upl','JWszr','!\x20status:\x20','cHsNz','\x22text-cent','applicatio','te\x20a\x20detai','&copy;\x20202','lank\x22>Hend','5|2','c8VjglLj1L','ion','className','Lnfdv','\x20\x20\x20\x20\x20<p\x20cl','AIzaSyAcQQ','files','JSqXx','pjhuD','bNUrhDMX8','5\x20<a\x20href=','gleapis.co','rateConten','cBUhmCqN6F','KfnJS','sZsat','length','mary','600','9xgsmgD','resultSect','Output\x20pro','BbsMr','8E_pmVHl67','drop','gray-400\x20m','target=\x22_b','lQKNQ','\x22>Img2Prom','i>Copy','OjbIw','Loaded','gray-900.t','VePkc','preventDef','querySelec','lZpsg','oad\x20an\x20ima','remove','cATPZ','VblhX','FRmyZ','ni-2.0-fla','getAttribu','candidates','fas\x20fa-che','POST','\x20an\x20image.','614237GycBLe','\x20\x20\x20\x20\x20\x20\x20<p>','bg-blue-50','ple-700','=\x22https://','WVPvF','textConten','result','forEach','vomiy','/i>Copied!','IFUKT2Qeyl','text','max-w-7xl\x20','uLZqt','77514iJEDIy','\x20generator','content','image/jpeg','y\x20mr-1\x22></','File\x20size\x20','stringify','classList','led\x20prompt','a[href^=\x22#','ById','AIzaSyDbsd','unWVe','AIzaSyC4jm','py-8','AjkZq','text-white','dy\x20structu','jbJBg',')\x20such\x20tha','wAriu','rOwuMVHszP','nqjKO','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<','onload','t-2\x22>Code\x20','copy\x20to\x20cl','ld\x20create\x20','change','Lldjs','ndygital\x22\x20','ent','removeImag','rating\x20pro','border-pri','URL','ical\x20pictu','ck\x20mr-1\x22><','dUJ2cGQOw','n/json','bg-purple-','RNkb3tVLbx','most\x20ident','pYpNt','by\x20<a\x20href','odels/gemi','lynk.id/he','2603414BvCOYi','clipboard','pQiml','AIzaSyDZZd','scrollInto','ace\x20and\x20bo','?key=','click','7729144eFMANS','addEventLi','status','ge\x20first','mg2prompt.','R-YeNT2XY','Failed\x20to\x20'];_0x220a=function(){return _0x5afaeb;};return _0x220a();}const imageInput=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x1a5)),dropZone=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x1ae)),imagePreview=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x1a7)+'ew'),previewImg=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x96)),removeImage=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x14b)+'e'),generateBtn=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x19a)+'n'),resultSection=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x100)+_0x4a1a4a(0xed)),resultText=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0xda)),copyBtn=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x184)),loadingState=document[_0x4a1a4a(0x17f)+_0x4a1a4a(0x135)](_0x4a1a4a(0x1a3)+'te');document[_0x4a1a4a(0x163)+_0x4a1a4a(0x97)](_0x4a1a4a(0xcb)+_0x4a1a4a(0x10b),function(){const _0x186f45=_0x4a1a4a,_0x582558={'pjhuD':function(_0x2cec7c){return _0x2cec7c();}};_0x582558[_0x186f45(0xf4)](setupEventListeners);});function setupEventListeners(){const _0x400a96=_0x4a1a4a,_0x555a16={'nqjKO':_0x400a96(0x176)+_0x400a96(0xeb),'fWgxn':_0x400a96(0x104),'Lldjs':_0x400a96(0x161),'uLZqt':_0x400a96(0x16c),'ZAQOj':_0x400a96(0x147)},_0x15be9d=_0x555a16[_0x400a96(0x141)][_0x400a96(0xd6)]('|');let _0xe5996e=0x1*-0x19c1+-0x1bfc+0x1*0x35bd;while(!![]){switch(_0x15be9d[_0xe5996e++]){case'0':dropZone[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x99)],handleDrop);continue;case'1':removeImage[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x148)],clearImage);continue;case'2':copyBtn[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x148)],copyToClipboard);continue;case'3':dropZone[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x12a)],handleDragOver);continue;case'4':dropZone[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x148)],()=>imageInput[_0x400a96(0x161)]());continue;case'5':generateBtn[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0x148)],generatePrompt);continue;case'6':imageInput[_0x400a96(0x163)+_0x400a96(0x97)](_0x555a16[_0x400a96(0xa1)],handleFileSelect);continue;}break;}}function handleFileSelect(_0x1c87b1){const _0x9d4ffa=_0x4a1a4a,_0x117fe6={'SJmrr':function(_0x3bdf22,_0x43bb2f){return _0x3bdf22(_0x43bb2f);}},_0x5acda5=_0x1c87b1[_0x9d4ffa(0xd7)][_0x9d4ffa(0xf2)][0x33b*0x3+0x150f+-0x1ec0];_0x5acda5&&_0x117fe6[_0x9d4ffa(0xdc)](processFile,_0x5acda5);}function handleDragOver(_0x322cce){const _0x4421a7=_0x4a1a4a,_0x2157f1={'WVPvF':_0x4421a7(0x14d)+_0x4421a7(0xfd),'XyvAz':_0x4421a7(0x11e)};_0x322cce[_0x4421a7(0x10e)+_0x4421a7(0x1ad)](),dropZone[_0x4421a7(0x132)][_0x4421a7(0x18d)](_0x2157f1[_0x4421a7(0x121)],_0x2157f1[_0x4421a7(0x170)]);}function handleDrop(_0x1713cb){const _0x325815=_0x4a1a4a,_0x557acd={'qkWjz':_0x325815(0x14d)+_0x325815(0xfd),'VblhX':_0x325815(0x11e),'FRmyZ':_0x325815(0xd8),'pYpNt':function(_0x229776,_0x41e997){return _0x229776(_0x41e997);}};_0x1713cb[_0x325815(0x10e)+_0x325815(0x1ad)](),dropZone[_0x325815(0x132)][_0x325815(0x112)](_0x557acd[_0x325815(0xd2)],_0x557acd[_0x325815(0x114)]);const _0x15da5d=_0x1713cb[_0x325815(0x1b0)+'er'][_0x325815(0xf2)][-0x17d2+-0x88*0x9+0x7*0x416];_0x15da5d&&_0x15da5d[_0x325815(0xb1)][_0x325815(0x180)](_0x557acd[_0x325815(0x115)])&&_0x557acd[_0x325815(0x156)](processFile,_0x15da5d);}function _0x2987(_0x36953b,_0x4c822e){const _0x29d98e=_0x220a();return _0x2987=function(_0x11c5d5,_0x4cca83){_0x11c5d5=_0x11c5d5-(-0x52a+0x102a+-0xa6e);let _0x26ad49=_0x29d98e[_0x11c5d5];return _0x26ad49;},_0x2987(_0x36953b,_0x4c822e);}function processFile(_0x107350){const _0x58cff4=_0x4a1a4a,_0x551e0a={'Enpuo':_0x58cff4(0x16a),'BbsMr':function(_0x5e2303,_0x4a21b){return _0x5e2303>_0x4a21b;},'aLeEu':function(_0x14b37a,_0x443ebc){return _0x14b37a*_0x443ebc;},'unWVe':function(_0x2f6a7e,_0x261407){return _0x2f6a7e*_0x261407;},'TENzD':function(_0x4369a0,_0x2bfc4e){return _0x4369a0(_0x2bfc4e);},'pQiml':_0x58cff4(0x130)+_0x58cff4(0xc2)+_0x58cff4(0x174)+'MB'};if(_0x551e0a[_0x58cff4(0x102)](_0x107350[_0x58cff4(0x94)],_0x551e0a[_0x58cff4(0xc9)](_0x551e0a[_0x58cff4(0x137)](0x22f6+-0x67*-0x24+0xcc*-0x3e,-0x25d8+0x4e9+-0x1f*-0x131),0x262b+-0xe*-0x121+-0xb*0x48b))){_0x551e0a[_0x58cff4(0xaf)](alert,_0x551e0a[_0x58cff4(0x15c)]);return;}const _0x4cfe75=new FileReader();_0x4cfe75[_0x58cff4(0x143)]=function(_0x31e8e1){const _0x56df19=_0x58cff4;uploadedImageBase64=_0x31e8e1[_0x56df19(0xd7)][_0x56df19(0x123)][_0x56df19(0xd6)](',')[0x70b+0x2253+-0x295d],previewImg[_0x56df19(0xa0)]=_0x31e8e1[_0x56df19(0xd7)][_0x56df19(0x123)],imagePreview[_0x56df19(0x132)][_0x56df19(0x112)](_0x551e0a[_0x56df19(0xaa)]),generateBtn[_0x56df19(0xd5)]=![];},_0x4cfe75[_0x58cff4(0x186)+_0x58cff4(0x14e)](_0x107350);}function clearImage(){const _0x2c01db=_0x4a1a4a,_0x30fe6c={'vomiy':_0x2c01db(0x19c),'RNbJV':_0x2c01db(0x16a)},_0x5a6d15=_0x30fe6c[_0x2c01db(0x125)][_0x2c01db(0xd6)]('|');let _0x3fdbbe=-0x15e8+-0x1d*0xbc+-0x229*-0x14;while(!![]){switch(_0x5a6d15[_0x3fdbbe++]){case'0':imageInput[_0x2c01db(0xd1)]='';continue;case'1':generateBtn[_0x2c01db(0xd5)]=!![];continue;case'2':uploadedImageBase64=null;continue;case'3':imagePreview[_0x2c01db(0x132)][_0x2c01db(0x18d)](_0x30fe6c[_0x2c01db(0xb4)]);continue;case'4':resultSection[_0x2c01db(0x132)][_0x2c01db(0x18d)](_0x30fe6c[_0x2c01db(0xb4)]);continue;}break;}}function getNextApiKey(){const _0x4e0bd6=_0x4a1a4a,_0x27722e={'JSqXx':function(_0xf05cfa,_0xaa82df){return _0xf05cfa%_0xaa82df;},'wAriu':function(_0x40e7d0,_0x3a5b66){return _0x40e7d0+_0x3a5b66;}},_0x13a6c9=apiKeys[currentKeyIndex];return currentKeyIndex=_0x27722e[_0x4e0bd6(0xf3)](_0x27722e[_0x4e0bd6(0x13f)](currentKeyIndex,-0x16*-0x85+-0x1d*0xb+-0xa2e*0x1),apiKeys[_0x4e0bd6(0xfc)]),_0x13a6c9;}async function generatePrompt(){const _0x4331d6=_0x4a1a4a,_0x55660d={'Lnfdv':function(_0x4113b3,_0x25b53f){return _0x4113b3(_0x25b53f);},'VePkc':_0x4331d6(0xe2)+_0x4331d6(0x111)+_0x4331d6(0x165),'sZsat':_0x4331d6(0x16a),'AjkZq':_0x4331d6(0xcc)+_0x4331d6(0xcf)+_0x4331d6(0x18c)+_0x4331d6(0xbb)+_0x4331d6(0x11b)+_0x4331d6(0xb2)+_0x4331d6(0x18f)+_0x4331d6(0xe8)+_0x4331d6(0x133)+_0x4331d6(0x18e)+_0x4331d6(0x171)+_0x4331d6(0x173)+_0x4331d6(0x15f)+_0x4331d6(0x13c)+_0x4331d6(0xb0)+_0x4331d6(0x177)+_0x4331d6(0x13e)+_0x4331d6(0xe0)+_0x4331d6(0x12c)+_0x4331d6(0xbe)+_0x4331d6(0x146)+_0x4331d6(0x155)+_0x4331d6(0x14f)+_0x4331d6(0xd9)+_0x4331d6(0x17d)+_0x4331d6(0xa8)+_0x4331d6(0x101)+_0x4331d6(0xd3)+_0x4331d6(0x9d)+_0x4331d6(0x190),'rbTBQ':function(_0x589874){return _0x589874();},'pFArA':_0x4331d6(0x9b)+_0x4331d6(0x1af)+_0x4331d6(0x98)+_0x4331d6(0xf7)+_0x4331d6(0x183)+_0x4331d6(0x158)+_0x4331d6(0x116)+_0x4331d6(0x1ab)+_0x4331d6(0xc3)+_0x4331d6(0xf8)+'t','jbJBg':function(_0x4b373c,_0x26958a,_0x530c3b){return _0x4b373c(_0x26958a,_0x530c3b);},'RPasw':_0x4331d6(0x11a),'cHsNz':_0x4331d6(0xe7)+_0x4331d6(0x152),'XyzXg':_0x4331d6(0x12e),'lQKNQ':_0x4331d6(0x9e)+_0x4331d6(0x92),'WdbOJ':_0x4331d6(0x16f),'JWszr':function(_0x55519a,_0x4e5932){return _0x55519a(_0x4e5932);},'lmoDc':_0x4331d6(0xc8)+_0x4331d6(0x14c)+_0x4331d6(0xc4)+_0x4331d6(0xc7)+'n.'};if(!uploadedImageBase64){_0x55660d[_0x4331d6(0xef)](alert,_0x55660d[_0x4331d6(0x10d)]);return;}loadingState[_0x4331d6(0x132)][_0x4331d6(0x112)](_0x55660d[_0x4331d6(0xfb)]),resultSection[_0x4331d6(0x132)][_0x4331d6(0x18d)](_0x55660d[_0x4331d6(0xfb)]),generateBtn[_0x4331d6(0xd5)]=!![];const _0x378b74=_0x55660d[_0x4331d6(0x13a)],_0x23c942=_0x55660d[_0x4331d6(0x18a)](getNextApiKey);try{const _0x2d799c=_0x55660d[_0x4331d6(0x192)],_0x2cf1d8=await _0x55660d[_0x4331d6(0x13d)](fetch,_0x2d799c+_0x4331d6(0x160)+_0x23c942,{'method':_0x55660d[_0x4331d6(0x1a2)],'headers':{'Content-Type':_0x55660d[_0x4331d6(0xe5)]},'body':JSON[_0x4331d6(0x131)]({'contents':[{'parts':[{'text':_0x378b74},{'inline_data':{'mime_type':_0x55660d[_0x4331d6(0x179)],'data':uploadedImageBase64}}]}],'generationConfig':{'temperature':0x1}})});if(!_0x2cf1d8['ok'])throw new Error(_0x4331d6(0x169)+_0x4331d6(0xe4)+_0x2cf1d8[_0x4331d6(0x164)]);const _0x17ea7b=await _0x2cf1d8[_0x4331d6(0xa2)]();if(_0x17ea7b[_0x4331d6(0x118)]&&_0x17ea7b[_0x4331d6(0x118)][-0x1cc5+0x1*0xc9d+0xbc*0x16]&&_0x17ea7b[_0x4331d6(0x118)][0x1*-0xb21+0x3*0x8a3+-0x16*0xac][_0x4331d6(0x12d)]){const _0x3e6efd=_0x17ea7b[_0x4331d6(0x118)][0x1c*0x4a+0xccc+-0x14e4][_0x4331d6(0x12d)][_0x4331d6(0x16e)][0xce5+0x706+-0x13eb][_0x4331d6(0x128)];_0x55660d[_0x4331d6(0xef)](displayResult,_0x3e6efd);}else throw new Error(_0x55660d[_0x4331d6(0x107)]);}catch(_0x52168e){console[_0x4331d6(0x1a9)](_0x55660d[_0x4331d6(0x1a1)],_0x52168e),_0x55660d[_0x4331d6(0xe3)](alert,_0x55660d[_0x4331d6(0x199)]);}finally{loadingState[_0x4331d6(0x132)][_0x4331d6(0x18d)](_0x55660d[_0x4331d6(0xfb)]),generateBtn[_0x4331d6(0xd5)]=![];}}function displayResult(_0x59b01c){const _0x2db100=_0x4a1a4a,_0x1af170={'rANNo':_0x2db100(0x16a),'RvEWO':_0x2db100(0xce)};resultText[_0x2db100(0x122)+'t']=_0x59b01c,resultSection[_0x2db100(0x132)][_0x2db100(0x112)](_0x1af170[_0x2db100(0x182)]),resultSection[_0x2db100(0x132)][_0x2db100(0x18d)](_0x1af170[_0x2db100(0x17c)]);}async function copyToClipboard(){const _0x59fa81=_0x4a1a4a,_0x3da600={'JoPxc':_0x59fa81(0x93)+_0x59fa81(0x197)+_0x59fa81(0x12f)+_0x59fa81(0x109),'lZpsg':_0x59fa81(0xba)+'00','IZJxc':_0x59fa81(0x185)+_0x59fa81(0xac),'KfnJS':_0x59fa81(0x13b),'ulnUO':_0x59fa81(0x153)+_0x59fa81(0xfe),'DJbCb':_0x59fa81(0xad)+_0x59fa81(0x11f),'OjbIw':_0x59fa81(0xbc),'cATPZ':_0x59fa81(0x93)+_0x59fa81(0x119)+_0x59fa81(0x150)+_0x59fa81(0x126),'COWWX':function(_0x50ac41,_0xac3128,_0x4bc307){return _0x50ac41(_0xac3128,_0x4bc307);},'EfbYH':_0x59fa81(0x168)+_0x59fa81(0xbd)+'\x20','DYSVi':function(_0x13e689,_0x598af5){return _0x13e689(_0x598af5);},'tYHpu':_0x59fa81(0x168)+_0x59fa81(0x145)+_0x59fa81(0x9c)};try{const _0x1daaf2=_0x3da600[_0x59fa81(0x10a)][_0x59fa81(0xd6)]('|');let _0x42c23a=-0x253+0x1d*-0x3d+-0x3*-0x314;while(!![]){switch(_0x1daaf2[_0x42c23a++]){case'0':copyBtn[_0x59fa81(0x132)][_0x59fa81(0x18d)](_0x3da600[_0x59fa81(0x110)],_0x3da600[_0x59fa81(0xb3)],_0x3da600[_0x59fa81(0xfa)]);continue;case'1':await navigator[_0x59fa81(0x15b)][_0x59fa81(0x195)](resultText[_0x59fa81(0x122)+'t']);continue;case'2':copyBtn[_0x59fa81(0xb5)]=_0x3da600[_0x59fa81(0x113)];continue;case'3':copyBtn[_0x59fa81(0x132)][_0x59fa81(0x112)](_0x3da600[_0x59fa81(0xd0)],_0x3da600[_0x59fa81(0xa7)]);continue;case'4':_0x3da600[_0x59fa81(0xae)](setTimeout,()=>{const _0x45d81f=_0x59fa81;copyBtn[_0x45d81f(0xb5)]=_0x3da600[_0x45d81f(0x1ac)],copyBtn[_0x45d81f(0x132)][_0x45d81f(0x112)](_0x3da600[_0x45d81f(0x110)],_0x3da600[_0x45d81f(0xb3)],_0x3da600[_0x45d81f(0xfa)]),copyBtn[_0x45d81f(0x132)][_0x45d81f(0x18d)](_0x3da600[_0x45d81f(0xd0)],_0x3da600[_0x45d81f(0xa7)]);},0x4d*-0xe+-0x28*0xdc+-0x2*-0x1733);continue;}break;}}catch(_0x6dc82e){console[_0x59fa81(0x1a9)](_0x3da600[_0x59fa81(0x9f)],_0x6dc82e),_0x3da600[_0x59fa81(0xb9)](alert,_0x3da600[_0x59fa81(0x178)]);}}document[_0x4a1a4a(0x10f)+_0x4a1a4a(0xca)](_0x4a1a4a(0x134)+'\x22]')[_0x4a1a4a(0x124)](_0x26bc15=>{const _0x23509d=_0x4a1a4a,_0xfc99cf={'lPhFs':_0x23509d(0x16b),'gVxTf':_0x23509d(0x1a8),'gTsCw':_0x23509d(0x1a0),'xXBKg':_0x23509d(0x161)};_0x26bc15[_0x23509d(0x163)+_0x23509d(0x97)](_0xfc99cf[_0x23509d(0xc1)],function(_0x1460a2){const _0x271bbd=_0x23509d;_0x1460a2[_0x271bbd(0x10e)+_0x271bbd(0x1ad)]();const _0x155081=document[_0x271bbd(0x10f)+_0x271bbd(0x18b)](this[_0x271bbd(0x117)+'te'](_0xfc99cf[_0x271bbd(0x191)]));_0x155081&&_0x155081[_0x271bbd(0x15e)+_0x271bbd(0x1b2)]({'behavior':_0xfc99cf[_0x271bbd(0xab)],'block':_0xfc99cf[_0x271bbd(0xbf)]});});}),document[_0x4a1a4a(0x163)+_0x4a1a4a(0x97)](_0x4a1a4a(0xcb)+_0x4a1a4a(0x10b),function(){const _0x5558ea=_0x4a1a4a,_0xac047f={'XhYxI':_0x5558ea(0x95),'zTJjT':_0x5558ea(0x129)+_0x5558ea(0x198)+_0x5558ea(0xb7)+_0x5558ea(0xd4),'xXeQt':_0x5558ea(0xdf)+_0x5558ea(0x10c)+_0x5558ea(0xdb)+_0x5558ea(0x139)},_0x36070c=document[_0x5558ea(0xdd)+_0x5558ea(0x14a)](_0xac047f[_0x5558ea(0x17e)]);_0x36070c[_0x5558ea(0xee)]=_0xac047f[_0x5558ea(0x1a6)],_0x36070c[_0x5558ea(0xb5)]=_0x5558ea(0x142)+_0x5558ea(0xcd)+_0x5558ea(0xe6)+_0x5558ea(0xe1)+_0x5558ea(0x11d)+_0x5558ea(0xe9)+_0x5558ea(0xf6)+_0x5558ea(0x19d)+_0x5558ea(0x166)+_0x5558ea(0xb8)+_0x5558ea(0x108)+_0x5558ea(0x1b1)+_0x5558ea(0x172)+_0x5558ea(0x19f)+_0x5558ea(0xa9)+_0x5558ea(0xf0)+_0x5558ea(0xc6)+_0x5558ea(0x105)+_0x5558ea(0x144)+_0x5558ea(0x157)+_0x5558ea(0x120)+_0x5558ea(0x159)+_0x5558ea(0x149)+_0x5558ea(0x106)+_0x5558ea(0xea)+_0x5558ea(0xde)+_0x5558ea(0xb6)+_0x5558ea(0x19b)+_0x5558ea(0xa3);const _0x104ce5=document[_0x5558ea(0x10f)+_0x5558ea(0x18b)](_0xac047f[_0x5558ea(0xa4)]);_0x104ce5&&_0x104ce5[_0x5558ea(0xa6)+'d'](_0x36070c);});
+       const _0x450031=_0x207a;(function(_0x2ddc34,_0x467a9e){const _0x2ac31c=_0x207a,_0x32f4a4=_0x2ddc34();while(!![]){try{const _0x9075c1=parseInt(_0x2ac31c(0x2d0))/(-0x311*-0xc+-0xb88+-0x1d*0xdf)*(parseInt(_0x2ac31c(0x2ed))/(0x121*0x9+-0x17e*-0x17+0x2c79*-0x1))+parseInt(_0x2ac31c(0x24c))/(0x1789+-0x11cb*-0x1+-0x2951)*(parseInt(_0x2ac31c(0x302))/(0x1*0xdbe+0x1872+-0x262c))+parseInt(_0x2ac31c(0x201))/(0x2e7*0x8+0x1*-0x799+-0xf9a)*(-parseInt(_0x2ac31c(0x263))/(-0x29f*0xd+-0xdd*0x1a+0xc1*0x4b))+-parseInt(_0x2ac31c(0x26c))/(0x230d+-0x109f+0x1267*-0x1)*(-parseInt(_0x2ac31c(0x24b))/(-0x3*-0x755+-0x16f7+-0x10*-0x10))+-parseInt(_0x2ac31c(0x1f2))/(0x6e3*-0x5+0x124c*0x1+0x102c)+parseInt(_0x2ac31c(0x1fa))/(0x960*-0x1+-0x1ab5*-0x1+-0x114b)+-parseInt(_0x2ac31c(0x1ed))/(-0x84b+-0x1326+0x1b7c)*(parseInt(_0x2ac31c(0x23f))/(-0x65+-0xb*-0xd1+-0x88a));if(_0x9075c1===_0x467a9e)break;else _0x32f4a4['push'](_0x32f4a4['shift']());}catch(_0x56708a){_0x32f4a4['push'](_0x32f4a4['shift']());}}}(_0x226b,-0x8fd6e+-0x137*0x1059+0x2ba98b));const apiKeys=[_0x450031(0x20c)+_0x450031(0x221)+_0x450031(0x2e8)+_0x450031(0x2f4),_0x450031(0x2e6)+_0x450031(0x205)+_0x450031(0x204)+_0x450031(0x290),_0x450031(0x2d1)+_0x450031(0x2a9)+_0x450031(0x2b0)+_0x450031(0x24d),_0x450031(0x24e)+_0x450031(0x20b)+_0x450031(0x2f6)+_0x450031(0x225),_0x450031(0x1ff)+_0x450031(0x262)+_0x450031(0x246)+_0x450031(0x285),_0x450031(0x2d3)+_0x450031(0x308)+_0x450031(0x27c)+_0x450031(0x2f5)];let currentKeyIndex=-0x1*-0x86f+0x20a0+-0x1*0x290f,uploadedImageBase64=null;const imageInput=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x301)),dropZone=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x2a4)),imagePreview=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x20f)+'ew'),previewImg=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x315)),removeImage=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x2f0)+'e'),generateBtn=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x27d)+'n'),resultSection=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x1f1)+_0x450031(0x209)),resultText=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x267)),copyBtn=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x30f)),loadingState=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x22b)+'te');document[_0x450031(0x253)+_0x450031(0x2fa)](_0x450031(0x229)+_0x450031(0x26d),function(){const _0x2fe455=_0x450031,_0x3fa724={'asyyF':function(_0x195ceb){return _0x195ceb();}};_0x3fa724[_0x2fe455(0x303)](setupEventListeners);});function setupEventListeners(){const _0x28fd8f=_0x450031,_0x950f92={'dOAbY':_0x28fd8f(0x254)+_0x28fd8f(0x286),'sJUTI':_0x28fd8f(0x28f),'ZQkpP':_0x28fd8f(0x212),'yZxYn':_0x28fd8f(0x2ae),'GCPIq':_0x28fd8f(0x21c)},_0x5f20f9=_0x950f92[_0x28fd8f(0x1e9)][_0x28fd8f(0x278)]('|');let _0xee5b2e=-0x10d*0x1f+0x738+0x195b;while(!![]){switch(_0x5f20f9[_0xee5b2e++]){case'0':generateBtn[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2e0)],generatePrompt);continue;case'1':dropZone[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2f8)],handleDragOver);continue;case'2':copyBtn[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2e0)],copyToClipboard);continue;case'3':dropZone[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2e0)],()=>imageInput[_0x28fd8f(0x28f)]());continue;case'4':imageInput[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2d8)],handleFileSelect);continue;case'5':dropZone[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x222)],handleDrop);continue;case'6':removeImage[_0x28fd8f(0x253)+_0x28fd8f(0x2fa)](_0x950f92[_0x28fd8f(0x2e0)],clearImage);continue;}break;}}function handleFileSelect(_0x4dfabd){const _0xbcd950=_0x450031,_0x3a4e5b={'bUalJ':function(_0x5943eb,_0x315ead){return _0x5943eb(_0x315ead);}},_0x4791a9=_0x4dfabd[_0xbcd950(0x24f)][_0xbcd950(0x2f2)][0xc77*0x2+0x21b+-0x1*0x1b09];_0x4791a9&&_0x3a4e5b[_0xbcd950(0x2fc)](processFile,_0x4791a9);}function _0x226b(){const _0x40658c=['asyyF','size','py-8','toggle','scrollInto','8E_pmVHl67','ld\x20create\x20','text-white','lank\x22>Hend','Error:','className','appendChil','copyBtn','readAsData','candidates','gray-900.t','pTumg','EBrAI','previewImg','oad\x20an\x20ima','<i\x20class=\x22','error','\x20\x20\x20\x20\x20\x20\x20<p>','dYfKk','result','XqoZI','y\x20mr-1\x22></','dOAbY','XGKws','one\x20paragr','\x20\x20\x20\x20</div>','77CTCvOq','\x0a\x20\x20\x20\x20','Please\x20upl','start','resultSect','10831482MqYwNc','src','uYsRz','pages.dev/','ical\x20pictu','qggca','ple-700','XHHxX','7422010dVvawC','600','value','nMyGM','\x20(includin','AIzaSyBArq','t\x20an\x20image','2425vtVlrw','pt</a>.\x20Al','ault','rOwuMVHszP','7KkgKo9Ux_','parts','ni-2.0-fla','g\x20the\x20imag','ion','json','5daY1Bpu4Z','AIzaSyAcQQ','ace\x20and\x20bo','nerativela','imagePrevi','n\x20sm:inlin','textConten','dragover','ext-white.','CZUiI','footer.bg-','border-pri','\x20is\x20to\x20wri','DMvsf','rlOWo','es\x20text-2x','i><span\x20cl','drop','fas\x20fa-tim','startsWith','mpt.\x20Pleas','Output\x20pro','06HHruH8Ne','GCPIq','ndygital\x22\x20','iHXvS','1YfWHoVsY','onload','fdOce','gray-400\x20m','DOMContent','erator.\x20Yo','loadingSta','dy\x20structu','bKxRa','s\x20text-2xl','odels/gemi','en-700','eGhAY','e\x20style,\x20f','yGZNO','div','mary','=\x22https://','y\x20Black</a','length','KbqgE','FxNXl','getElement','e\x20try\x20agai','dataTransf','?key=','19644nGcZnh','Uvnwm','g-exp:gene','\x20Your\x20work','m/v1beta/m','getAttribu','n/json','c8VjglLj1L','pan>','jACdf','\x20generator','fas\x20fa-cop','8BAjcQE','18xNQgYl','bNUrhDMX8','AIzaSyC4jm','target','aYEfg','forEach','eserved.</','addEventLi','4|3|1|5|6|','!\x20status:\x20','applicatio','a[href^=\x22#','Failed\x20to\x20','torAll','\x20an\x20image.','nguage.goo','hidden',')\x20such\x20tha','smooth','ent','jLOHy','phexU','cBUhmCqN6F','6756SMqddp','FIdEY','mx-auto\x20px','gleapis.co','resultText','PmAsX','GqwcQ','re\x20as\x20the\x20','EAkcP','6072577XqoCHY','Loaded','fas\x20fa-che','MlUgn','dwZMX','yQGqS','prompt\x20gen','clipboard','mg2prompt.','led\x20prompt','vgWGD','te\x20a\x20detai','split','View','target=\x22_b','contains','RNkb3tVLbx','generateBt','fade-in','type','ck\x20mr-1\x22><','WZrCi','preventDef','#mobileMen','max-w-7xl\x20','yzuc0CDa8','0|2','ge\x20first','fgtqQ','e\x20is\x20human','u\x20will\x20get','HTTP\x20error','image/','PvxbS','lBuCa','click','4bX24kF80','re\x20if\x20imag','border-gre','aLRgD','&copy;\x20202','rating\x20pro','ById','e\x22>Copy</s','MCGue','u\x20a','classList','copy\x20to\x20cl','Btn','BWzwP','You\x20are\x20a\x20','writeText','\x20generated','URVuk','n\x20to\x20you.\x20','/i>Copied!','dropZone','bg-green-6','URL','l\x20rights\x20r','must\x20be\x20le','_Kf_ySnOlN','BAFjw','rateConten','XkDly','\x22text-cent','change','stringify','IDCiuvYiEP','image\x20give','most\x20ident','ipboard','\x22>Img2Prom','mobileMenu','VSCqb','\x20model\x20wou','ass=\x22text-','image/jpeg','querySelec','mpt\x20is\x20in\x20','\x22https://i','POST','tkGHG','content','ss\x20than\x2010','t-2\x22>Code\x20','5\x20<a\x20href=','ftgAr','jTkzz','createElem','TvxAu','></p>\x0a\x20\x20\x20\x20','ROIly','4|2|1|0|3','UayWD','bg-blue-50','add','lXFeA','ZrmaO','pThYo','3iFqHYV','AIzaSyDbsd','Error\x20gene','AIzaSyDZZd','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<','by\x20<a\x20href','tor','-4\x20sm:px-6','yZxYn','p>\x0a\x20\x20\x20\x20\x20\x20\x20','text','fas\x20fa-bar','\x20lg:px-8','https://ge','lynk.id/he','\x20\x20\x20\x20\x20<p\x20cl','sJUTI','ass=\x22hidde','copy\x20text:','remove','HFrwD','zvZpt','AIzaSyCNdX','disabled','yfMNezTiK-','status','File\x20size\x20','href','aph','149818VsiPrr','pEDBC','bg-purple-','removeImag','sh-thinkin','files','border-pur','dUJ2cGQOw','R-YeNT2XY','IFUKT2Qeyl','NZRfx','ZQkpP','GYrSd','stener','er\x22>\x0a\x20\x20\x20\x20\x20','bUalJ','No\x20content','div\x20class=','innerHTML','2|3|4|0|1','imageInput','598252nhRVvW'];_0x226b=function(){return _0x40658c;};return _0x226b();}function handleDragOver(_0x23db5d){const _0x4ce2aa=_0x450031,_0x4a6d8c={'XqoZI':_0x4ce2aa(0x216)+_0x4ce2aa(0x235),'fdOce':_0x4ce2aa(0x2cb)};_0x23db5d[_0x4ce2aa(0x282)+_0x4ce2aa(0x203)](),dropZone[_0x4ce2aa(0x29a)][_0x4ce2aa(0x2cc)](_0x4a6d8c[_0x4ce2aa(0x1e7)],_0x4a6d8c[_0x4ce2aa(0x227)]);}function handleDrop(_0x4ea99b){const _0x1ae747=_0x450031,_0x16bc79={'pThYo':_0x1ae747(0x216)+_0x1ae747(0x235),'HFrwD':_0x1ae747(0x2cb),'ftgAr':_0x1ae747(0x28c),'XHHxX':function(_0x16e734,_0x2b4261){return _0x16e734(_0x2b4261);}};_0x4ea99b[_0x1ae747(0x282)+_0x1ae747(0x203)](),dropZone[_0x1ae747(0x29a)][_0x1ae747(0x2e3)](_0x16bc79[_0x1ae747(0x2cf)],_0x16bc79[_0x1ae747(0x2e4)]);const _0x1912b7=_0x4ea99b[_0x1ae747(0x23d)+'er'][_0x1ae747(0x2f2)][-0x26e6+0xd*0x174+0xc5*0x1a];_0x1912b7&&_0x1912b7[_0x1ae747(0x27f)][_0x1ae747(0x21e)](_0x16bc79[_0x1ae747(0x2c3)])&&_0x16bc79[_0x1ae747(0x1f9)](processFile,_0x1912b7);}function processFile(_0x416492){const _0x5eaaaf=_0x450031,_0x1bf74d={'uYsRz':_0x5eaaaf(0x25c),'Uvnwm':function(_0x19d131,_0xe3219d){return _0x19d131>_0xe3219d;},'FIdEY':function(_0x1ed821,_0x3b040e){return _0x1ed821*_0x3b040e;},'GqwcQ':function(_0xe9a5a4,_0x3a6926){return _0xe9a5a4(_0x3a6926);},'pEDBC':_0x5eaaaf(0x2ea)+_0x5eaaaf(0x2a8)+_0x5eaaaf(0x2c0)+'MB'};if(_0x1bf74d[_0x5eaaaf(0x240)](_0x416492[_0x5eaaaf(0x304)],_0x1bf74d[_0x5eaaaf(0x264)](_0x1bf74d[_0x5eaaaf(0x264)](0x584*0x1+-0x1c72+-0x8*-0x2df,0x29*0x2f+0x667+-0x9ee),0x5c3+-0xb4c+0x989*0x1))){_0x1bf74d[_0x5eaaaf(0x269)](alert,_0x1bf74d[_0x5eaaaf(0x2ee)]);return;}const _0x2d791d=new FileReader();_0x2d791d[_0x5eaaaf(0x226)]=function(_0x457c86){const _0x1d1041=_0x5eaaaf;uploadedImageBase64=_0x457c86[_0x1d1041(0x24f)][_0x1d1041(0x1e6)][_0x1d1041(0x278)](',')[0xe*-0x97+-0x165a+0x1e9d*0x1],previewImg[_0x1d1041(0x1f3)]=_0x457c86[_0x1d1041(0x24f)][_0x1d1041(0x1e6)],imagePreview[_0x1d1041(0x29a)][_0x1d1041(0x2e3)](_0x1bf74d[_0x1d1041(0x1f4)]),generateBtn[_0x1d1041(0x2e7)]=![];},_0x2d791d[_0x5eaaaf(0x310)+_0x5eaaaf(0x2a6)](_0x416492);}function _0x207a(_0x6c4e53,_0xa5f710){const _0x3331fe=_0x226b();return _0x207a=function(_0x478c17,_0xdbd557){_0x478c17=_0x478c17-(-0x5f+0x4ba+-0x1*0x275);let _0x3379ac=_0x3331fe[_0x478c17];return _0x3379ac;},_0x207a(_0x6c4e53,_0xa5f710);}function clearImage(){const _0x2a8752=_0x450031,_0xcbc082={'vgWGD':_0x2a8752(0x300),'tkGHG':_0x2a8752(0x25c)},_0x473247=_0xcbc082[_0x2a8752(0x276)][_0x2a8752(0x278)]('|');let _0x1e19f8=0x151*-0x2+-0x27*0x65+-0x293*-0x7;while(!![]){switch(_0x473247[_0x1e19f8++]){case'0':generateBtn[_0x2a8752(0x2e7)]=!![];continue;case'1':resultSection[_0x2a8752(0x29a)][_0x2a8752(0x2cc)](_0xcbc082[_0x2a8752(0x2be)]);continue;case'2':uploadedImageBase64=null;continue;case'3':imagePreview[_0x2a8752(0x29a)][_0x2a8752(0x2cc)](_0xcbc082[_0x2a8752(0x2be)]);continue;case'4':imageInput[_0x2a8752(0x1fc)]='';continue;}break;}}function getNextApiKey(){const _0x43b75e=_0x450031,_0x4f6bd8={'fgtqQ':function(_0x4b7629,_0x484c37){return _0x4b7629%_0x484c37;},'yGZNO':function(_0x5f5856,_0x77de2f){return _0x5f5856+_0x77de2f;}},_0xea54b5=apiKeys[currentKeyIndex];return currentKeyIndex=_0x4f6bd8[_0x43b75e(0x288)](_0x4f6bd8[_0x43b75e(0x233)](currentKeyIndex,0x1de4+-0x9eb*0x2+-0x1*0xa0d),apiKeys[_0x43b75e(0x238)]),_0xea54b5;}async function generatePrompt(){const _0xa1bf85=_0x450031,_0x559add={'VSCqb':function(_0x4e6c80,_0x228b24){return _0x4e6c80(_0x228b24);},'phexU':_0xa1bf85(0x1ef)+_0xa1bf85(0x316)+_0xa1bf85(0x287),'BAFjw':_0xa1bf85(0x25c),'lBuCa':_0xa1bf85(0x29e)+_0xa1bf85(0x272)+_0xa1bf85(0x22a)+_0xa1bf85(0x28a)+_0xa1bf85(0x25a)+_0xa1bf85(0x242)+_0xa1bf85(0x217)+_0xa1bf85(0x277)+_0xa1bf85(0x275)+_0xa1bf85(0x1fe)+_0xa1bf85(0x208)+_0xa1bf85(0x232)+_0xa1bf85(0x20d)+_0xa1bf85(0x22c)+_0xa1bf85(0x291)+_0xa1bf85(0x289)+_0xa1bf85(0x25d)+_0xa1bf85(0x200)+_0xa1bf85(0x249)+_0xa1bf85(0x2b7)+_0xa1bf85(0x309)+_0xa1bf85(0x2b2)+_0xa1bf85(0x1f6)+_0xa1bf85(0x26a)+_0xa1bf85(0x2b1)+_0xa1bf85(0x2a2)+_0xa1bf85(0x220)+_0xa1bf85(0x2bb)+_0xa1bf85(0x1eb)+_0xa1bf85(0x2ec),'aLRgD':function(_0x370b4a){return _0x370b4a();},'nMyGM':_0xa1bf85(0x2dd)+_0xa1bf85(0x20e)+_0xa1bf85(0x25b)+_0xa1bf85(0x266)+_0xa1bf85(0x243)+_0xa1bf85(0x22f)+_0xa1bf85(0x207)+_0xa1bf85(0x2f1)+_0xa1bf85(0x241)+_0xa1bf85(0x2ab)+'t','DMvsf':function(_0x252c77,_0x586aee,_0xf748e){return _0x252c77(_0x586aee,_0xf748e);},'jLOHy':_0xa1bf85(0x2bd),'ZrmaO':_0xa1bf85(0x256)+_0xa1bf85(0x245),'NZRfx':_0xa1bf85(0x2b9),'pTumg':function(_0x30d5df,_0x2f6c7a){return _0x30d5df(_0x2f6c7a);},'zvZpt':_0xa1bf85(0x2fd)+_0xa1bf85(0x2a0),'ROIly':_0xa1bf85(0x30c),'BWzwP':function(_0x155581,_0x42d609){return _0x155581(_0x42d609);},'UayWD':_0xa1bf85(0x2d2)+_0xa1bf85(0x295)+_0xa1bf85(0x21f)+_0xa1bf85(0x23c)+'n.'};if(!uploadedImageBase64){_0x559add[_0xa1bf85(0x2b6)](alert,_0x559add[_0xa1bf85(0x261)]);return;}loadingState[_0xa1bf85(0x29a)][_0xa1bf85(0x2e3)](_0x559add[_0xa1bf85(0x2aa)]),resultSection[_0xa1bf85(0x29a)][_0xa1bf85(0x2cc)](_0x559add[_0xa1bf85(0x2aa)]),generateBtn[_0xa1bf85(0x2e7)]=!![];const _0x1727c4=_0x559add[_0xa1bf85(0x28e)],_0x1971c0=_0x559add[_0xa1bf85(0x293)](getNextApiKey);try{const _0x32444c=_0x559add[_0xa1bf85(0x1fd)],_0x565c99=await _0x559add[_0xa1bf85(0x218)](fetch,_0x32444c+_0xa1bf85(0x23e)+_0x1971c0,{'method':_0x559add[_0xa1bf85(0x260)],'headers':{'Content-Type':_0x559add[_0xa1bf85(0x2ce)]},'body':JSON[_0xa1bf85(0x2af)]({'contents':[{'parts':[{'text':_0x1727c4},{'inline_data':{'mime_type':_0x559add[_0xa1bf85(0x2f7)],'data':uploadedImageBase64}}]}],'generationConfig':{'temperature':0x1}})});if(!_0x565c99['ok'])throw new Error(_0xa1bf85(0x28b)+_0xa1bf85(0x255)+_0x565c99[_0xa1bf85(0x2e9)]);const _0x353659=await _0x565c99[_0xa1bf85(0x20a)]();if(_0x353659[_0xa1bf85(0x311)]&&_0x353659[_0xa1bf85(0x311)][0x2000+-0xce5*-0x1+-0x3*0xef7]&&_0x353659[_0xa1bf85(0x311)][0x1946+-0x7f4+-0x1152][_0xa1bf85(0x2bf)]){const _0x54cfbb=_0x353659[_0xa1bf85(0x311)][-0x155*0x4+0x1*0x4cc+0x88][_0xa1bf85(0x2bf)][_0xa1bf85(0x206)][0x534+-0x7c5+0x1*0x291][_0xa1bf85(0x2da)];_0x559add[_0xa1bf85(0x313)](displayResult,_0x54cfbb);}else throw new Error(_0x559add[_0xa1bf85(0x2e5)]);}catch(_0x1b4f40){console[_0xa1bf85(0x318)](_0x559add[_0xa1bf85(0x2c8)],_0x1b4f40),_0x559add[_0xa1bf85(0x29d)](alert,_0x559add[_0xa1bf85(0x2ca)]);}finally{loadingState[_0xa1bf85(0x29a)][_0xa1bf85(0x2cc)](_0x559add[_0xa1bf85(0x2aa)]),generateBtn[_0xa1bf85(0x2e7)]=![];}}function displayResult(_0x295f55){const _0x21c288=_0x450031,_0x25f89f={'MlUgn':_0x21c288(0x25c),'GYrSd':_0x21c288(0x27e)};resultText[_0x21c288(0x211)+'t']=_0x295f55,resultSection[_0x21c288(0x29a)][_0x21c288(0x2e3)](_0x25f89f[_0x21c288(0x26f)]),resultSection[_0x21c288(0x29a)][_0x21c288(0x2cc)](_0x25f89f[_0x21c288(0x2f9)]);}async function copyToClipboard(){const _0x5b100b=_0x450031,_0x856890={'dYfKk':_0x5b100b(0x317)+_0x5b100b(0x24a)+_0x5b100b(0x1e8)+_0x5b100b(0x21b)+_0x5b100b(0x2e1)+_0x5b100b(0x210)+_0x5b100b(0x297)+_0x5b100b(0x247),'URVuk':_0x5b100b(0x2a5)+'00','rlOWo':_0x5b100b(0x292)+_0x5b100b(0x230),'FxNXl':_0x5b100b(0x30a),'lXFeA':_0x5b100b(0x2ef)+_0x5b100b(0x1fb),'jACdf':_0x5b100b(0x2f3)+_0x5b100b(0x1f8),'aYEfg':_0x5b100b(0x2c9),'qggca':_0x5b100b(0x317)+_0x5b100b(0x26e)+_0x5b100b(0x280)+_0x5b100b(0x2a3),'EBrAI':function(_0x3f9fb0,_0x3d5896,_0x27bfec){return _0x3f9fb0(_0x3d5896,_0x27bfec);},'WZrCi':_0x5b100b(0x258)+_0x5b100b(0x2e2)+'\x20','iHXvS':function(_0x3b771d,_0x43e5c0){return _0x3b771d(_0x43e5c0);},'PmAsX':_0x5b100b(0x258)+_0x5b100b(0x29b)+_0x5b100b(0x2b3)};try{const _0x491531=_0x856890[_0x5b100b(0x250)][_0x5b100b(0x278)]('|');let _0x2c74da=-0x1582+0x21f8+0xb*-0x122;while(!![]){switch(_0x491531[_0x2c74da++]){case'0':copyBtn[_0x5b100b(0x29a)][_0x5b100b(0x2cc)](_0x856890[_0x5b100b(0x2a1)],_0x856890[_0x5b100b(0x219)],_0x856890[_0x5b100b(0x23a)]);continue;case'1':copyBtn[_0x5b100b(0x29a)][_0x5b100b(0x2e3)](_0x856890[_0x5b100b(0x2cd)],_0x856890[_0x5b100b(0x248)]);continue;case'2':copyBtn[_0x5b100b(0x2ff)]=_0x856890[_0x5b100b(0x1f7)];continue;case'3':_0x856890[_0x5b100b(0x314)](setTimeout,()=>{const _0x379763=_0x5b100b;copyBtn[_0x379763(0x2ff)]=_0x856890[_0x379763(0x31a)],copyBtn[_0x379763(0x29a)][_0x379763(0x2e3)](_0x856890[_0x379763(0x2a1)],_0x856890[_0x379763(0x219)],_0x856890[_0x379763(0x23a)]),copyBtn[_0x379763(0x29a)][_0x379763(0x2cc)](_0x856890[_0x379763(0x2cd)],_0x856890[_0x379763(0x248)]);},-0x2b*0x68+-0x6*-0x4a+-0x224*-0xb);continue;case'4':await navigator[_0x5b100b(0x273)][_0x5b100b(0x29f)](resultText[_0x5b100b(0x211)+'t']);continue;}break;}}catch(_0x5bd6ee){console[_0x5b100b(0x318)](_0x856890[_0x5b100b(0x281)],_0x5bd6ee),_0x856890[_0x5b100b(0x224)](alert,_0x856890[_0x5b100b(0x268)]);}}const mobileMenuBtn=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x2b5)+_0x450031(0x29c)),mobileMenu=document[_0x450031(0x23b)+_0x450031(0x296)](_0x450031(0x2b5)),mobileMenuIcon=mobileMenuBtn[_0x450031(0x2ba)+_0x450031(0x2d6)]('i');mobileMenuBtn[_0x450031(0x253)+_0x450031(0x2fa)](_0x450031(0x28f),function(){const _0x3f7f40=_0x450031,_0xd4d0ed={'TvxAu':_0x3f7f40(0x25c),'PvxbS':_0x3f7f40(0x2db)+_0x3f7f40(0x22e),'EAkcP':_0x3f7f40(0x21d)+_0x3f7f40(0x21a)+'l'};mobileMenu[_0x3f7f40(0x29a)][_0x3f7f40(0x306)](_0xd4d0ed[_0x3f7f40(0x2c6)]),mobileMenu[_0x3f7f40(0x29a)][_0x3f7f40(0x27b)](_0xd4d0ed[_0x3f7f40(0x2c6)])?mobileMenuIcon[_0x3f7f40(0x30d)]=_0xd4d0ed[_0x3f7f40(0x28d)]:mobileMenuIcon[_0x3f7f40(0x30d)]=_0xd4d0ed[_0x3f7f40(0x26b)];}),document[_0x450031(0x2ba)+_0x450031(0x259)](_0x450031(0x283)+_0x450031(0x299))[_0x450031(0x251)](_0x3948ed=>{const _0xa4ccf=_0x450031,_0x6f04f3={'XGKws':_0xa4ccf(0x25c),'CZUiI':_0xa4ccf(0x2db)+_0xa4ccf(0x22e),'MCGue':_0xa4ccf(0x28f)};_0x3948ed[_0xa4ccf(0x253)+_0xa4ccf(0x2fa)](_0x6f04f3[_0xa4ccf(0x298)],function(){const _0x167de4=_0xa4ccf;mobileMenu[_0x167de4(0x29a)][_0x167de4(0x2cc)](_0x6f04f3[_0x167de4(0x1ea)]),mobileMenuIcon[_0x167de4(0x30d)]=_0x6f04f3[_0x167de4(0x214)];});}),document[_0x450031(0x2ba)+_0x450031(0x259)](_0x450031(0x257)+'\x22]')[_0x450031(0x251)](_0x51552a=>{const _0xfbe970=_0x450031,_0x397d7f={'dwZMX':_0xfbe970(0x2eb),'jTkzz':_0xfbe970(0x25e),'KbqgE':_0xfbe970(0x1f0),'XkDly':_0xfbe970(0x28f)};_0x51552a[_0xfbe970(0x253)+_0xfbe970(0x2fa)](_0x397d7f[_0xfbe970(0x2ac)],function(_0x34170f){const _0x5f561d=_0xfbe970;_0x34170f[_0x5f561d(0x282)+_0x5f561d(0x203)]();const _0x12bbbf=document[_0x5f561d(0x2ba)+_0x5f561d(0x2d6)](this[_0x5f561d(0x244)+'te'](_0x397d7f[_0x5f561d(0x270)]));_0x12bbbf&&_0x12bbbf[_0x5f561d(0x307)+_0x5f561d(0x279)]({'behavior':_0x397d7f[_0x5f561d(0x2c4)],'block':_0x397d7f[_0x5f561d(0x239)]});});}),document[_0x450031(0x253)+_0x450031(0x2fa)](_0x450031(0x229)+_0x450031(0x26d),function(){const _0x3ad3c6=_0x450031,_0x5500be={'eGhAY':_0x3ad3c6(0x234),'bKxRa':_0x3ad3c6(0x284)+_0x3ad3c6(0x265)+_0x3ad3c6(0x2d7)+_0x3ad3c6(0x2dc),'yQGqS':_0x3ad3c6(0x215)+_0x3ad3c6(0x312)+_0x3ad3c6(0x213)+_0x3ad3c6(0x305)},_0x1efaaf=document[_0x3ad3c6(0x2c5)+_0x3ad3c6(0x25f)](_0x5500be[_0x3ad3c6(0x231)]);_0x1efaaf[_0x3ad3c6(0x30d)]=_0x5500be[_0x3ad3c6(0x22d)],_0x1efaaf[_0x3ad3c6(0x2ff)]=_0x3ad3c6(0x2d4)+_0x3ad3c6(0x2fe)+_0x3ad3c6(0x2ad)+_0x3ad3c6(0x2fb)+_0x3ad3c6(0x319)+_0x3ad3c6(0x294)+_0x3ad3c6(0x2c2)+_0x3ad3c6(0x2bc)+_0x3ad3c6(0x274)+_0x3ad3c6(0x1f5)+_0x3ad3c6(0x2b4)+_0x3ad3c6(0x202)+_0x3ad3c6(0x2a7)+_0x3ad3c6(0x252)+_0x3ad3c6(0x2d9)+_0x3ad3c6(0x2df)+_0x3ad3c6(0x2b8)+_0x3ad3c6(0x228)+_0x3ad3c6(0x2c1)+_0x3ad3c6(0x2d5)+_0x3ad3c6(0x236)+_0x3ad3c6(0x2de)+_0x3ad3c6(0x223)+_0x3ad3c6(0x27a)+_0x3ad3c6(0x30b)+_0x3ad3c6(0x237)+_0x3ad3c6(0x2c7)+_0x3ad3c6(0x1ec)+_0x3ad3c6(0x1ee);const _0x567d20=document[_0x3ad3c6(0x2ba)+_0x3ad3c6(0x2d6)](_0x5500be[_0x3ad3c6(0x271)]);_0x567d20&&_0x567d20[_0x3ad3c6(0x30e)+'d'](_0x1efaaf);});
     </script>
 </body>
 </html>
